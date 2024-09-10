@@ -1,16 +1,15 @@
-import {EtiquetaCart,ImagenCart,PrecioCart,BotonCart} from '../ComponetsCart/ComponetsCart';
+import { EtiquetaCart, ImagenCart, PrecioCart, BotonCart } from '../ComponetsCart/ComponetsCart';
 import './ProductCart.css'
-function ProductCart({nombre,dscto,textoDscto,scr,alt,precio,precioDcto,outsold,agregados}) {
-    console.log("Se creo: ",nombre)
+function ProductCart({ nombre, dscto, textoDscto, scr, alt, precio, precioDcto, outsold, agregados }) {
     return (
-        <div className='containerCart'>
-            <EtiquetaCart tipo={dscto} texto={textoDscto}/>
-            <ImagenCart src={scr} alt={alt}/>
+        <div className={`containerCart ${outsold === true ? 'grey' : ''}`} >
+            <EtiquetaCart tipo={dscto} texto={textoDscto} outsold={outsold}/>
+            <ImagenCart src={scr} alt={alt} />
             <p className='NombreProducto'>{nombre}</p>
             <PrecioCart precio={precio} precioDcto={precioDcto}/>
             <BotonCart outsold={outsold} agregados={agregados}/>
-        </div>
-    )
+        </ div >
+            )
 }
-export default ProductCart
+            export default ProductCart
 

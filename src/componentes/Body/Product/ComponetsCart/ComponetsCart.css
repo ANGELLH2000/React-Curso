@@ -88,25 +88,33 @@ div p.precioDcsto {
 .EtiquetaCart {
     position: absolute;
     top: .625rem;
-    left: .625rem;
     padding: .125rem .625rem;
     border-radius: .25rem;
     font-size: .75rem;
     background-color: transparent;
     color: transparent;
+    
+    left: .625rem;
+
 }
 
 .dcto {
     background-color: #B16927;
     color: white;
+    --start-left: -3.125rem;
+    animation-duration: 2s;
+    animation-name: slidein;
 }
 
-.nuevo {
-    background-color: white;
-    color: black;
+.new {
+    background-color: black;
+    color: white;
+    --start-left: -3.5rem;
+    animation-duration: 2s;
+    animation-name: slidein;
 }
 
-.agotado {
+.outsold {
     background-color: #D8D8D8;
     color: black;
 }
@@ -114,6 +122,9 @@ div p.precioDcsto {
 .punidades {
     background-color: #D44012;
     color: white;
+    --start-left: -6.9375rem;
+    animation-duration: 2s;
+    animation-name: slidein;
 }
 
 .ImagenCart {
@@ -134,4 +145,33 @@ div p.precioDcsto {
     /* Asegura que la imagen cubra todo el div */
     object-position: center;
     /* Centra la imagen */
+}
+
+.y1 p {
+    /*el left se de -50px*/
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+.y2 p {
+    /*el left se de -60px*/
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+.y3 p {
+    /*el left se de -45px*/
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    0% {
+        left: var(--start-left);
+    }
+
+    80% {
+        left: .625rem;
+    }
+
 }

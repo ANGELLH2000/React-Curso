@@ -2,7 +2,6 @@ import './ItemListContainer.css'
 import ProductCart from '../Product/ProductCart/ProductCart'
 import {productos} from '../../../data/data'
 function navBar({ gretting }) {
-    console.log(productos);
     return (
         <>
             <h3>{gretting}</h3>

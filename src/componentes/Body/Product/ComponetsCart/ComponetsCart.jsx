@@ -28,17 +28,24 @@ function BotonCart1() {//Sin productos agregados
 }
 function BotonCart({ outsold, agregados }) {
 
-    if (outsold === "true") {
+    if (outsold === true) {
         return (<BotonCart3 />);
     } else {
         return agregados > 0 ? <BotonCart2 cant={agregados} /> : <BotonCart1 />;
     }
 
 }
-function EtiquetaCart({ texto, tipo }) {
-    return (
-        texto && tipo ? <div className={`EtiquetaCart ${tipo}`}>{texto}</div> : <></>
-    )
+function EtiquetaCart({ texto, tipo, outsold }) {
+    if (outsold === true) {
+        return (
+            <div className='EtiquetaCart outsold'>Agotado</div>
+        )
+    } else {
+        return (
+            texto && tipo ? <div className={`EtiquetaCart ${tipo}`}>{texto}</div> : <></>
+        )
+    }
+
 }
 
 function PrecioCart({ precio, precioDcto }) {

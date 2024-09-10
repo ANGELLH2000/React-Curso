@@ -39,8 +39,8 @@ export let productos = [
         "id": 3,
         "nombre": "Sartén Antiadherente",
         "descuento": {
-            "tipo": "dcto",
-            "texto": "-15%"
+            "tipo": "new",
+            "texto": "Nuevo"
         },
         "precio": {
             "precio": 18.99,
@@ -49,7 +49,7 @@ export let productos = [
         "descripcion": "Sartén antiadherente, 28cm de diámetro.",
         "estadoProducto": {
             "outsold": false,
-            "agregados": 8
+            "agregados": ""
         },
         "scr": "https://images.unsplash.com/photo-1688398846460-baab8638e30a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxOb24tc3RpY2slMjBQYW58ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080"
     },
@@ -67,7 +67,7 @@ export let productos = [
         "descripcion": "Tabla de cortar de bambú, 30x20cm.",
         "estadoProducto": {
             "outsold": false,
-            "agregados": 10
+            "agregados": 0
         },
         "scr": "https://images.unsplash.com/photo-1522774354045-e5db7fca06cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDdXR0aW5nJTIwQm9hcmR8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080"
     },
@@ -75,8 +75,8 @@ export let productos = [
         "id": 5,
         "nombre": "Rallador de Queso",
         "descuento": {
-            "tipo": "dcto",
-            "texto": "-5%"
+            "tipo": "punidades",
+            "texto": "Pocas Unidades"
         },
         "precio": {
             "precio": 6.29,
@@ -84,7 +84,7 @@ export let productos = [
         },
         "descripcion": "Rallador de queso de acero inoxidable, 4 caras.",
         "estadoProducto": {
-            "outsold": true,
+            "outsold": false,
             "agregados": ""
         },
         "scr": "https://images.unsplash.com/photo-1592178036182-5400889dfc74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDaGVlc2UlMjBHcmF0ZXJ8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080"
@@ -103,7 +103,7 @@ export let productos = [
         "descripcion": "Báscula digital para cocina, capacidad de 5kg.",
         "estadoProducto": {
             "outsold": false,
-            "agregados": 3
+            "agregados": 0
         },
         "scr": "https://images.unsplash.com/photo-1698930611790-67bb1522f178?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxLaXRjaGVuJTIwU2NhbGV8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080"
     },
@@ -121,7 +121,7 @@ export let productos = [
         "descripcion": "Juego de cubiertos de acero inoxidable, 24 piezas.",
         "estadoProducto": {
             "outsold": false,
-            "agregados": 12
+            "agregados": 0
         },
         "scr": "https://images.unsplash.com/photo-1706028212203-a2be8979f964?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDdXRsZXJ5JTIwU2V0fGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080"
     },
