@@ -111,8 +111,8 @@ export let productos = [
         "id": 7,
         "nombre": "Set de Cubiertos",
         "descuento": {
-            "tipo": "dcto",
-            "texto": "-20%"
+            "tipo": "punidades",
+            "texto": "Pocas Unidades"
         },
         "precio": {
             "precio": 24.99,
