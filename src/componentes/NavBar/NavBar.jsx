@@ -2,8 +2,10 @@ import './navBar.css';
 import logo from '../../assets/logo.png';
 import CartWidget from './CartWidget/CartWidget';
 import { IoIosSearch } from "react-icons/io";
-function navBar() {
+import CarritoLateral from '../Body/Carrito/CarritoLateral/CarritoLateral'
+import { useEffect, useState } from 'react';
 
+function NavBar_TopBar({ openCarritoLateral }) {
     return (
         <div className='fixed'>
             <nav>
@@ -26,12 +28,36 @@ function navBar() {
                     <span className='barra'></span>
                     <div className='icons-navbar'>
                         <IoIosSearch size={20} />
-                        <CartWidget items="2" />
+                        <CartWidget items="2" onClick={openCarritoLateral} />
                     </div>
                 </ul>
             </nav>
         </div>
+
+    )
+}
+function NavBar() {
+    const [visibleCart, setVisibleCart] = useState(false)
+
+    const openCart = () => {
+        setVisibleCart(true)
+    }
+    const closeCart = () => {
+        setVisibleCart(false)
+    }
+
+
+
+    return (
+        <>
+            <NavBar_TopBar openCarritoLateral={openCart} />
+            <CarritoLateral visible={visibleCart} closeCart={closeCart} />
+        </>
     )
 }
 
-export default navBar
+
+
+
+
+export default NavBar

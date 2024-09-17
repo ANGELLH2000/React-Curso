@@ -1,5 +1,7 @@
 import './CarritoLateral.css'
 import scrAlt from '../../../../assets/img-cart.png';
+
+import { useState, useEffect } from 'react';
 import { IoMdClose } from "react-icons/io";
 
 function ProductoCarrito() {
@@ -20,64 +22,69 @@ function ProductoCarrito() {
                 </div>
                 <div className='cart-bottons'>
                 </div>
-                    <p>Unidades</p>
+                <p>Unidades</p>
             </div>
         </div>
     )
 }
-function CarritoLateral() {
-    return (
-        <div className='container'>
-            <div className='shoping-cart'>
-                <div className='top'>
-                    <div className='top-title'>
-                    <p className='title-shoping-cart'>Carro de compras</p>
-                    <IoMdClose />
+function CarritoLateral({ visible, closeCart }) {
+    const [isFade, setIsFade] = useState(true);
+    const [isVisible, setIsVisible] = useState(visible);
+    const cerrar = () => {
+        setIsFade(false)
+    }
+
+    useEffect(() => {
+        if (!isFade) {
+            const timeout = setTimeout(() => {
+                console.log("Se Destruye el componente  despues de 1s")
+                setIsFade(true)
+                closeCart()
+            }, 500);
+            return () => clearTimeout(timeout);
+        }
+    }, [isFade])
+
+    useEffect(() => {
+        setIsVisible(visible)
+    }, [visible])
+
+    if (isVisible === false) {
+        return (<></>)
+    } else {
+        return (
+            <div className={`container ${isFade ? 'fade-in' : 'fade-out'}`}>
+                <div className={`shoping-cart ${isFade ? 'slideIn' : 'slideOut'}`}>
+                    <div className='top'>
+                        <div className='top-title'>
+                            <p className='title-shoping-cart'>Carro de compras</p>
+                            <IoMdClose onClick={cerrar} style={{ cursor: 'pointer' }} />
+                        </div>
+                        <p className='items-title-shoping-cart c-707070'>10 Productos</p>
+                        <div className='list-products'>
+                            <ProductoCarrito />
+                            <ProductoCarrito />
+                            <ProductoCarrito />
+                            <ProductoCarrito />
+                            <ProductoCarrito />
+                            <ProductoCarrito />
+                            <ProductoCarrito />
+                            <ProductoCarrito />
+                        </div>
                     </div>
-                    <p className='items-title-shoping-cart c-707070'>10 Productos</p>
-                    <div className='list-products'>
-                        <ProductoCarrito />
-                        <ProductoCarrito />
-                        <ProductoCarrito />
-                        <ProductoCarrito />
-                        <ProductoCarrito />
-                        <ProductoCarrito />
-                        <ProductoCarrito />
-                        <ProductoCarrito />
+                    <span className='skip'></span>
+                    <div className='bottom'>
+                        <div className='total-bottom'>
+                            <p>Subtotal</p>
+                            <p>S/.100,00</p>
+                        </div>
+                        <a href="" className='boton-bottom'>Ver Carrito</a>
                     </div>
-                </div>
-                <span className='skip'></span>
-                <div className='bottom'>
-                    <div className='total-bottom'>
-                        <p>Subtotal</p>
-                        <p>S/.100,00</p>
-                    </div>
-                    <a href="" className='boton-bottom'>Ver Carrito</a>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
+
 
 }
-function CarritoLateral1({ src, alt }) {
-    return (
-        <div className='container'>
-            <div className='cart-container'>
-                <div className='title'>
-                    <p>Carrito de Compras</p>
-                    <IoMdClose />
-                </div>
-                <p className='cant-productos-cart'>10 Productos</p>
-                <ProductoCarrito />
-                <span></span>
-                <div>
-                    <p>SubTotal (10 productos)</p>
-                    <p>S/. 100.00</p>
-                </div>
-                <button>Ver Carrito</button>
-            </div>
-        </div>
-    )
-}
-
 export default CarritoLateral;

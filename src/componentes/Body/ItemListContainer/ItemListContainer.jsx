@@ -5,7 +5,7 @@ function navBar({ gretting }) {
     return (
         <>
             <h3>{gretting}</h3>
-            <div className='contenedor'>
+            <div className='contenedor '>{/* agregar contenedor-stop cuando se abra el carrito*/}
                 {productos.map(
                     producto=>(
                     <ProductCart 
