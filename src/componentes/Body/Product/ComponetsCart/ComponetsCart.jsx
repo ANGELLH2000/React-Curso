@@ -9,29 +9,29 @@ function BotonCart3() {//Agotado
         </div>
     )
 }
-function BotonCart2({ cant }) {//Con 1 Producto en el carro
+function BotonCart2({ cant ,agregar,dataProducto}) {//Con 1 Producto en el carro
     return (
         <div className='BotonCart2'>
             <div><IoMdRemove /></div>
             <p >{cant} und{cant > 1 ? "s" : ""}</p>
-            <div><IoMdAdd /></div>
+            <div onClick={()=>{agregar(dataProducto)}}style={{ cursor: 'pointer' }}><IoMdAdd /></div>
         </div>
     )
 }
 
-function BotonCart1() {//Sin productos agregados
+function BotonCart1({agregar,dataProducto}) {//Sin productos agregados
     return (
-        <div className='BotonCart'>
+        <button onClick={()=>agregar(dataProducto)} className='BotonCart' style={{ cursor: 'pointer' }}>
             <p >Agregar</p>
-        </div>
+        </button>
     )
 }
-function BotonCart({ outsold, agregados }) {
+function BotonCart({ outsold, agregados ,agregar,dataProducto}) {
 
     if (outsold === true) {
         return (<BotonCart3 />);
     } else {
-        return agregados > 0 ? <BotonCart2 cant={agregados} /> : <BotonCart1 />;
+        return agregados > 0 ? <BotonCart2 agregar={agregar} dataProducto={dataProducto} cant={agregados} /> : <BotonCart1 agregar={agregar} dataProducto={dataProducto}/>;
     }
 
 }

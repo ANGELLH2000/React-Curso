@@ -1,13 +1,14 @@
+import { productos } from '../../../../data/data';
 import { EtiquetaCart, ImagenCart, PrecioCart, BotonCart } from '../ComponetsCart/ComponetsCart';
 import './ProductCart.css'
-function ProductCart({ nombre, dscto, textoDscto, scr, alt, precio, precioDcto, outsold, agregados }) {
+function ProductCart({ dataProducto, agregar}) {
     return (
-        <div className={`containerCart ${outsold === true ? 'grey' : ''}`} >
-            <EtiquetaCart tipo={dscto} texto={textoDscto} outsold={outsold}/>
-            <ImagenCart src={scr} alt={alt} />
-            <p className='NombreProducto'>{nombre}</p>
-            <PrecioCart precio={precio} precioDcto={precioDcto}/>
-            <BotonCart outsold={outsold} agregados={agregados}/>
+        <div className={`containerCart ${dataProducto.estadoProducto.outsold === true ? 'grey' : ''}`} >
+            <EtiquetaCart tipo={dataProducto.descuento.tipo} texto={dataProducto.descuento.texto} outsold={dataProducto.estadoProducto.outsold}/>
+            <ImagenCart src={dataProducto.scr} alt={dataProducto.descripcion} />
+            <p className='NombreProducto'>{dataProducto.nombre}</p>
+            <PrecioCart precio={dataProducto.precio.precio} precioDcto={dataProducto.precio.precioDscto}/>
+            <BotonCart agregar={agregar} dataProducto={dataProducto} outsold={dataProducto.estadoProducto.outsold} agregados={dataProducto.estadoProducto.agregados}/>
         </ div >
             )
 }

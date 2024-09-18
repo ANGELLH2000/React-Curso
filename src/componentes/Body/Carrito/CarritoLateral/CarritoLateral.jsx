@@ -1,18 +1,18 @@
 import './CarritoLateral.css'
 import scrAlt from '../../../../assets/img-cart.png';
-
+import useCarrito from '../../../Hooks/hooks';
 import { useState, useEffect } from 'react';
 import { IoMdClose } from "react-icons/io";
 
-function ProductoCarrito() {
+function ProductoCarrito({dataProducto}) {
     return (
         <div className='cart-product'>
             <a href='#' className='img'>
-                <img src={scrAlt} alt="" />
+                <img src={dataProducto.scr} alt={dataProducto.descripcion} />
             </a>
             <div className='datos'>
                 <div className='flex-r'>
-                    <p>Tacita de Café</p>
+                    <p>{dataProducto.nombre}</p>
                     <IoMdClose />
                 </div>
                 <p className='c-707070'>Datos adicional</p>
@@ -27,9 +27,10 @@ function ProductoCarrito() {
         </div>
     )
 }
-function CarritoLateral({ visible, closeCart }) {
+function CarritoLateral({ visible, closeCart, productos }) {
     const [isFade, setIsFade] = useState(true);
     const [isVisible, setIsVisible] = useState(visible);
+    const { carrito,traerCarritoAlState} = useCarrito()
     const cerrar = () => {
         setIsFade(false)
     }
@@ -46,7 +47,9 @@ function CarritoLateral({ visible, closeCart }) {
     }, [isFade])
 
     useEffect(() => {
+        traerCarritoAlState()
         setIsVisible(visible)
+        
     }, [visible])
 
     if (isVisible === false) {
@@ -60,16 +63,16 @@ function CarritoLateral({ visible, closeCart }) {
                             <p className='title-shoping-cart'>Carro de compras</p>
                             <IoMdClose onClick={cerrar} style={{ cursor: 'pointer' }} />
                         </div>
-                        <p className='items-title-shoping-cart c-707070'>10 Productos</p>
+                        <p className='items-title-shoping-cart c-707070'>{`${carrito.length>0?`${carrito.length} Producto${carrito.length>1?'s':''}`:'Sin Productos en el Carrito'}`}</p>
                         <div className='list-products'>
-                            <ProductoCarrito />
-                            <ProductoCarrito />
-                            <ProductoCarrito />
-                            <ProductoCarrito />
-                            <ProductoCarrito />
-                            <ProductoCarrito />
-                            <ProductoCarrito />
-                            <ProductoCarrito />
+                            {carrito.map(
+                                producto => (
+                                    <ProductoCarrito                                     
+                                        key={producto.id}
+                                        dataProducto={producto}
+                                    />
+                                )
+                            )}
                         </div>
                     </div>
                     <span className='skip'></span>

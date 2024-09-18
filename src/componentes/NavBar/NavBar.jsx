@@ -4,6 +4,7 @@ import CartWidget from './CartWidget/CartWidget';
 import { IoIosSearch } from "react-icons/io";
 import CarritoLateral from '../Body/Carrito/CarritoLateral/CarritoLateral'
 import { useEffect, useState } from 'react';
+import useCarrito from '../Hooks/hooks';
 
 function NavBar_TopBar({ openCarritoLateral }) {
     return (
@@ -51,7 +52,7 @@ function NavBar() {
     return (
         <>
             <NavBar_TopBar openCarritoLateral={openCart} />
-            <CarritoLateral visible={visibleCart} closeCart={closeCart} />
+            <CarritoLateral visible={visibleCart} closeCart={closeCart}  />
         </>
     )
 }
