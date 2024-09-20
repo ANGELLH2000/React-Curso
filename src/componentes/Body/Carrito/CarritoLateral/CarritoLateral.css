@@ -94,6 +94,7 @@
     background-color: rgba(177, 106, 39, 0.5);
 }
 .cart-product {
+    user-select: none;
     opacity: 0;
     width: 100%;
     display: flex;
@@ -129,16 +130,34 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 5px;
     gap: 5px;
+    position: relative;
 }
-
-.flex-r {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.close{
+    position: absolute;
+    padding-right: .4688rem;
+    padding-top: .1875rem;
+    right: 0;
+    cursor: pointer;
 }
-
+.close:active{
+    color: red;
+}
+.textos{
+    max-width:110px ;
+    margin-top: .875rem;
+    align-content: center;
+    flex-grow: 1;
+    align-self: center;
+    overflow: hidden;         
+    white-space: nowrap;      
+    position: relative;
+}
+.textos:hover .title-xl{
+    height: 14px; 
+    display: inline-block;
+    animation: scroll 8s 1
+}
 .cart-product .datos div.flex-r:first-child {
     justify-content: space-between;
 }
@@ -158,7 +177,22 @@
 
 .cart-bottons {
     margin-top: auto;
+    padding-right: 5%;
+    padding-bottom: .625rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
+.cart-bottons button{
+    cursor: pointer;
+    display: flex;
+    background-color: transparent;
+}
+.cart-bottons button:active{
+    color: #B16927;
+}
+
 
 .skip {
     background-color: rgba(112, 112, 112, 0.2);
@@ -183,7 +217,8 @@
 }
 
 .boton-bottom {
-    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
     color: black;
     margin-right: 15px;
     margin-left: 30px;
@@ -234,5 +269,16 @@
     100% {
         transform: translateX(100%);
         opacity: 0;
+    }
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);  
+    }
+    50% { 
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0%);
     }
 }

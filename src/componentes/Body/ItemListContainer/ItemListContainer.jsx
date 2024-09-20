@@ -4,9 +4,15 @@ import { productos } from '../../../data/data'
 import useCarrito from '../../Hooks/hooks'
 import { useEffect } from 'react'
 
-function navBar({ gretting }) {
-    const { carrito, agregarProductoAlCarrito} = useCarrito()
-    console.log("El carro desde Item>", carrito)
+function ItemListContainer({ gretting ,carritoHook}) {
+    const {carrito,AumentarCantidad, RestarCantidad,AgregarProducto,ExistenciaDeProducto} = carritoHook
+    const AccionesBotones={
+        carrito,
+        AgregarProducto,
+        AumentarCantidad,
+        RestarCantidad,
+        ExistenciaDeProducto
+    }
     const agregar=(obj)=>{
         agregarProductoAlCarrito(obj)
     }
@@ -20,7 +26,7 @@ function navBar({ gretting }) {
                     <ProductCart
                                 key={producto.id}
                                 dataProducto={producto}
-                                agregar={ agregar }
+                                AccionesBotones={AccionesBotones}
                     />
                     )
                 )}
@@ -31,4 +37,4 @@ function navBar({ gretting }) {
     )
 }
 
-export default navBar
+export default ItemListContainer

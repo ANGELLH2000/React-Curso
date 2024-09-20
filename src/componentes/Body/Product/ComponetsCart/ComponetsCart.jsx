@@ -9,29 +9,31 @@ function BotonCart3() {//Agotado
         </div>
     )
 }
-function BotonCart2({ cant ,agregar,dataProducto}) {//Con 1 Producto en el carro
+function BotonCart2({ cant, AccionesBotones, dataProducto }) {//Con 1 Producto en el carro
+    const { AumentarCantidad, RestarCantidad } = AccionesBotones
     return (
         <div className='BotonCart2'>
-            <div><IoMdRemove /></div>
+            <div onClick={() => { RestarCantidad(dataProducto['SKU']) }} style={{ cursor: 'pointer' }}><IoMdRemove /></div>
             <p >{cant} und{cant > 1 ? "s" : ""}</p>
-            <div onClick={()=>{agregar(dataProducto)}}style={{ cursor: 'pointer' }}><IoMdAdd /></div>
+            <div onClick={() => { AumentarCantidad(dataProducto['SKU']) }} style={{ cursor: 'pointer' }}><IoMdAdd /></div>
         </div>
     )
 }
 
-function BotonCart1({agregar,dataProducto}) {//Sin productos agregados
+function BotonCart1({ AccionesBotones, dataProducto }) {//Sin productos agregados
+    const { AgregarProducto } = AccionesBotones
     return (
-        <button onClick={()=>agregar(dataProducto)} className='BotonCart' style={{ cursor: 'pointer' }}>
+        <button onClick={() => AgregarProducto(dataProducto)} className='BotonCart' style={{ cursor: 'pointer' }}>
             <p >Agregar</p>
         </button>
     )
 }
-function BotonCart({ outsold, agregados ,agregar,dataProducto}) {
-
+function BotonCart({ AccionesBotones, outsold, dataProducto }) {
+    const { ExistenciaDeProducto } = AccionesBotones
     if (outsold === true) {
         return (<BotonCart3 />);
     } else {
-        return agregados > 0 ? <BotonCart2 agregar={agregar} dataProducto={dataProducto} cant={agregados} /> : <BotonCart1 agregar={agregar} dataProducto={dataProducto}/>;
+        return ExistenciaDeProducto(dataProducto['SKU'])[0] ? <BotonCart2 dataProducto={dataProducto} cant={ExistenciaDeProducto(dataProducto['SKU'])[1]} AccionesBotones={AccionesBotones} /> : <BotonCart1 AccionesBotones={AccionesBotones} dataProducto={dataProducto} />;
     }
 
 }

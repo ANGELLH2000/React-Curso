@@ -6,7 +6,7 @@ import CarritoLateral from '../Body/Carrito/CarritoLateral/CarritoLateral'
 import { useEffect, useState } from 'react';
 import useCarrito from '../Hooks/hooks';
 
-function NavBar_TopBar({ openCarritoLateral }) {
+function NavBar_TopBar({ openCarritoLateral, items }) {
     return (
         <div className='fixed'>
             <nav>
@@ -29,7 +29,7 @@ function NavBar_TopBar({ openCarritoLateral }) {
                     <span className='barra'></span>
                     <div className='icons-navbar'>
                         <IoIosSearch size={20} />
-                        <CartWidget items="2" onClick={openCarritoLateral} />
+                        <CartWidget items={items} onClick={openCarritoLateral} />
                     </div>
                 </ul>
             </nav>
@@ -37,22 +37,19 @@ function NavBar_TopBar({ openCarritoLateral }) {
 
     )
 }
-function NavBar() {
+function NavBar({carritoHook}) {
     const [visibleCart, setVisibleCart] = useState(false)
-
+    const { cantAndTotal } = carritoHook
     const openCart = () => {
         setVisibleCart(true)
     }
     const closeCart = () => {
         setVisibleCart(false)
     }
-
-
-
     return (
         <>
-            <NavBar_TopBar openCarritoLateral={openCart} />
-            <CarritoLateral visible={visibleCart} closeCart={closeCart}  />
+            <NavBar_TopBar openCarritoLateral={openCart} items={cantAndTotal[2]} />
+            <CarritoLateral visible={visibleCart} closeCart={closeCart} carritoHook={carritoHook} />
         </>
     )
 }
