@@ -1,4 +1,4 @@
-import './navBar.css';
+import './NavBar.css';
 import logo from '../../assets/logo.png';
 import CartWidget from './CartWidget/CartWidget';
 import { IoIosSearch } from "react-icons/io";
