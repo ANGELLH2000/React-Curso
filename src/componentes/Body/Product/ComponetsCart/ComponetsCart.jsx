@@ -54,15 +54,15 @@ function EtiquetaCart({ texto, tipo, outsold }) {
 function PrecioCart({ precio, precioDcto }) {
     return (
         <div className='containderPrecio'>
-            {precioDcto ? <p className='precioDcsto'>S/. {precioDcto}</p> : <></>}
-            <p className='precio'>S/. {precio}</p>
+            {precioDcto && (<><p className='precioDcsto'>S/. {precio}</p><p className='precio'>S/. {precioDcto}</p></>)}
+            {!precioDcto && <p className='precio'>S/. {precio}</p>}
         </div>
     )
 }
 function ImagenCart({ src, alt, SKU }) {
     return (
         <Link to={`/Tienda/Producto/${SKU}`} className='ImagenCart'>
-                <img src={src ? src : src = scrAlt} alt={alt} />
+            <img src={src ? src : src = scrAlt} alt={alt} />
         </Link>
     )
 }

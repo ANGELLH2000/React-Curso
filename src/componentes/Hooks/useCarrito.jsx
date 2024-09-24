@@ -88,7 +88,9 @@ function useCarrito() {
         let totalItems = 0
         if (carrito.length > 0) {
             for (const producto of carrito) {
-                total = total + (producto.precio.precio * producto.estadoProducto.agregados)
+                let precioPorProducto=0
+                producto.precio.precioDscto?precioPorProducto=producto.precio.precioDscto:precioPorProducto=producto.precio.precio
+                total = total + (precioPorProducto * producto.estadoProducto.agregados)
                 totalItems = totalItems + (producto.estadoProducto.agregados)
 
             }

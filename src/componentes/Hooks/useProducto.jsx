@@ -13,9 +13,6 @@ function useProducto() {
             let info = dataProductos.find((producto) => producto['SKU'] === Number(SKU));
             setInfoProducto(info?info:null)
         }
-
-
-
     }
 
 
