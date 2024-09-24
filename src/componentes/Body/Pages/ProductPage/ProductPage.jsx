@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import Datos from './Datos'
 import Imagenes from './Imagenes'
 import './ProductPage.css'
@@ -13,6 +13,16 @@ function ProductPage() {
     }, [SKU,loading]); // Solo se ejecuta cuando cambia SKU o Buscar
     console.log(infoProducto)
 
+    if(loading){
+        return(
+            <p>Cargando</p>
+        )
+    }
+    if(!infoProducto){
+        return(
+            <Navigate to="/Tienda"/>
+        )
+    }
     return (
         <>
             <div className="container-producto">
@@ -20,8 +30,6 @@ function ProductPage() {
                 <Datos data={infoProducto} />
             </div>
         </>
-    )
-
+    )    
 }
-
 export default ProductPage
