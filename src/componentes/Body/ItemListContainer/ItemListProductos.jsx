@@ -11,7 +11,7 @@ function ItemListProductos({ AccionesBotones, categorias, param }) {
     }, [categorias, param, navigate]);
 
     if (categoriaBuscadaUrl !== undefined) {
-        return productos.filter(producto => producto["Categoria"] === param).map((producto) => (
+        return productos.filter(producto => producto["categoria"] === param).map((producto) => (
             <ProductCart
                 key={producto.id}
                 dataProducto={producto}

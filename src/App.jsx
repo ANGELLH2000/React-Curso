@@ -26,7 +26,7 @@ function App() {
       <NavBar carritoHook={carritoHook} />
       <Routes >
         <Route index element={<InicioPage/>}/>
-        <Route path="/Tienda" element={<ItemListContainer gretting="Bienvenido a la tienda" carritoHook={carritoHook} categoria={true} />} />
+        <Route path="/Tienda" element={<ItemListContainer gretting="Bienvenido a la tienda, Estas son nuestras CATEGORÍAS" carritoHook={carritoHook} categoria={true} />} />
         <Route path="/Tienda/Categoria" element={<Navigate to="/Tienda" />} />
         <Route path='/Tienda/Categoria/:NombreCategoria' element={<ItemListContainer gretting="Categoria tipo" carritoHook={carritoHook} categoria={false} />} />
         <Route path='/Tienda/Producto/:SKU' element={<ProductPage/>} />

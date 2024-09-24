@@ -18,7 +18,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1468768649734-ddebcf0b0bc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDb2ZmZWUlMjBNdWd8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200201,
-        "Categoria": "Pastelería"
+        "categoria": "Pastelería"
     },
     {
         "id": 2,
@@ -38,7 +38,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1623947851502-49082c0d8ab8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxLaXRjaGVuJTIwS25pZmV8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200202,
-        "Categoria": "Pastas"
+        "categoria": "Pastas"
     },
     {
         "id": 3,
@@ -58,7 +58,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1688398846460-baab8638e30a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxOb24tc3RpY2slMjBQYW58ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200203,
-        "Categoria": "Chocolatería"
+        "categoria": "Chocolatería"
     },
     {
         "id": 4,
@@ -78,7 +78,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1522774354045-e5db7fca06cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDdXR0aW5nJTIwQm9hcmR8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200204,
-        "Categoria": "Utencilios_de_Cocina"
+        "categoria": "Utencilios_de_Cocina"
     },
     {
         "id": 5,
@@ -98,7 +98,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1592178036182-5400889dfc74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDaGVlc2UlMjBHcmF0ZXJ8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200205,
-        "Categoria": "Menaje"
+        "categoria": "Menaje"
     },
     {
         "id": 6,
@@ -118,7 +118,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1698930611790-67bb1522f178?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxLaXRjaGVuJTIwU2NhbGV8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200206,
-        "Categoria": "Otros"
+        "categoria": "Otros"
     },
     {
         "id": 7,
@@ -138,7 +138,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1706028212203-a2be8979f964?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDdXRsZXJ5JTIwU2V0fGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200207,
-        "Categoria": "Pastelería"
+        "categoria": "Pastelería"
     },
     {
         "id": 8,
@@ -158,7 +158,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1592771583287-71f7b4df0d40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxUb2FzdGVyfGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200208,
-        "Categoria": "Pastas"
+        "categoria": "Pastas"
     },
     {
         "id": 9,
@@ -178,7 +178,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1634314672332-cc317dbd5772?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxCbGVuZGVyfGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200209,
-        "Categoria": "Chocolatería"
+        "categoria": "Chocolatería"
     },
     {
         "id": 10,
@@ -198,7 +198,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1663336234696-6220be33c122?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxTdGVhbSUyMElyb258ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200210,
-        "Categoria": "Utencilios_de_Cocina"
+        "categoria": "Utencilios_de_Cocina"
     },
     {
         "id": 11,
@@ -218,7 +218,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1477925650445-9dc5d0aa1595?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxXYWxsJTIwQ2xvY2t8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200211,
-        "Categoria": "Menaje"
+        "categoria": "Menaje"
     },
     {
         "id": 12,
@@ -238,7 +238,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1573810655264-8d1e50f1592d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxLaXRjaGVuJTIwU2Npc3NvcnN8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200212,
-        "Categoria": "Otros"
+        "categoria": "Otros"
     },
     {
         "id": 13,
@@ -258,7 +258,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1584990347955-2ec0431a6e8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDb29rd2FyZSUyMFNldHxlbnwwfHx8fDE3MjQ2MjQ2MjJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200213,
-        "Categoria": "Pastelería"
+        "categoria": "Pastelería"
     },
     {
         "id": 14,
@@ -278,7 +278,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1676907228185-6869277a9f8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxLaXRjaGVuJTIwT3JnYW5pemVyfGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200214,
-        "Categoria": "Pastas"
+        "categoria": "Pastas"
     },
     {
         "id": 15,
@@ -298,7 +298,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1514627670085-17253b8172f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxQYXN0YSUyMFN0cmFpbmVyfGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200215,
-        "Categoria": "Chocolatería"
+        "categoria": "Chocolatería"
     },
     {
         "id": 16,
@@ -318,7 +318,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1549716679-efce92a6bd12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxWZWdldGFibGUlMjBQZWVsZXJ8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200216,
-        "Categoria": "Utencilios_de_Cocina"
+        "categoria": "Utencilios_de_Cocina"
     },
     {
         "id": 17,
@@ -338,7 +338,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1719244394388-1ec3fc0de69c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxNZWFzdXJpbmclMjBKdWd8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200217,
-        "Categoria": "Menaje"
+        "categoria": "Menaje"
     },
     {
         "id": 18,
@@ -358,7 +358,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1624715082216-7eef9c03ec19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxTaWxpY29uZSUyMFNwYXR1bGF8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200218,
-        "Categoria": "Otros"
+        "categoria": "Otros"
     },
     {
         "id": 19,
@@ -378,7 +378,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1589985270319-40629f6ae936?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxIYW5kJTIwTWl4ZXJ8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200219,
-        "Categoria": "Pastelería"
+        "categoria": "Pastelería"
     },
     {
         "id": 20,
@@ -398,7 +398,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1531506527841-6befe8901440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxHbGFzcyUyMENvbnRhaW5lcnMlMjBTZXR8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200220,
-        "Categoria": "Pastas"
+        "categoria": "Pastas"
     },
     {
         "id": 21,
@@ -418,7 +418,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1591981131825-751212cf8327?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxNZWFzdXJpbmclMjBTcG9vbnxlbnwwfHx8fDE3MjQ2MjQ2MjJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200221,
-        "Categoria": "Chocolatería"
+        "categoria": "Chocolatería"
     },
     {
         "id": 22,
@@ -438,7 +438,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1534596292079-6ab51b3b0507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxXYXRlciUyMEp1Z3xlbnwwfHx8fDE3MjQ2MjQ2MjJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200222,
-        "Categoria": "Utencilios_de_Cocina"
+        "categoria": "Utencilios_de_Cocina"
     },
     {
         "id": 23,
@@ -458,7 +458,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1591345299642-13726d9c80c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxTdGVlbCUyMFRoZXJtb3N8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200223,
-        "Categoria": "Menaje"
+        "categoria": "Menaje"
     },
     {
         "id": 24,
@@ -478,7 +478,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1517467139951-f5a925c9f9de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxEcmlwJTIwQ29mZmVlJTIwTWFrZXJ8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200224,
-        "Categoria": "Otros"
+        "categoria": "Otros"
     },
     {
         "id": 25,
@@ -498,7 +498,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1634812165658-b2cafc6e1f04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxTYWxhZCUyMEJvd2x8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200225,
-        "Categoria": "Pastelería"
+        "categoria": "Pastelería"
     },
     {
         "id": 26,
@@ -518,7 +518,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1719761601551-2a87a6a08639?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxDb3Jrc2NyZXd8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200226,
-        "Categoria": "Pastas"
+        "categoria": "Pastas"
     },
     {
         "id": 27,
@@ -538,7 +538,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1597528662465-55ece5734101?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxXaGlza3xlbnwwfHx8fDE3MjQ2MjQ2MjJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200227,
-        "Categoria": "Chocolatería"
+        "categoria": "Chocolatería"
     },
     {
         "id": 28,
@@ -558,7 +558,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1626202380338-2369f39e30d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxXb29kZW4lMjBSb2xsaW5nJTIwUGlufGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200228,
-        "Categoria": "Utencilios_de_Cocina"
+        "categoria": "Utencilios_de_Cocina"
     },
     {
         "id": 29,
@@ -578,7 +578,7 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1608019526927-c4ea27a542a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxNaXhpbmclMjBCb3dsfGVufDB8fHx8MTcyNDYyNDYyMnww&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200229,
-        "Categoria": "Menaje"
+        "categoria": "Menaje"
     },
     {
         "id": 30,
@@ -598,6 +598,6 @@ export let productos =
         },
         "scr": "https://images.unsplash.com/photo-1492552296703-4ec0a2fb3715?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDE3NDR8MHwxfHNlYXJjaHwxfHxNb3J0YXIlMjBhbmQlMjBQZXN0bGV8ZW58MHx8fHwxNzI0NjI0NjIyfDA&ixlib=rb-4.0.3&q=80&w=1080",
         "SKU": 2200230,
-        "Categoria": "Otros"
+        "categoria": "Otros"
     }
 ]

@@ -1,6 +1,7 @@
 import BotonesCart from './BotonesCart'
 import './ProductPage.css'
 function Datos({data}) {
+    console.log(data)
     return (
         <div className="datos">
             <p className="title">{data.nombre}</p>
@@ -10,8 +11,8 @@ function Datos({data}) {
             <p className="description">{data.descripcion}</p>
             <BotonesCart />
             <div>
-                <p className='DatosExtras'>SKU: <span>20022002</span></p>
-                <p className='DatosExtras'>Categoria: <span>Comida</span></p>
+                <p className='DatosExtras'>SKU: <span>{data.SKU}</span></p>
+                <p className='DatosExtras'>Categoria: <span>{data.categoria}</span></p>
             </div>
 
         </div>
