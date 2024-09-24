@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container-producto {
+    padding-top: 15vh;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 700px 62px 480px 1fr;
+    grid-template-rows: minmax(auto, 600px) auto auto;
+    grid-template-areas:
+        ". imagenes . datos ."
+        ". . . . ."
+    ;
+}
+/*Sección de Datos   ----------------------------------------------*/
+.datos {
+    grid-area: datos;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.datos .title {
+    font-size: 1.625rem;
+    color: black;
+}
+
+.datos .price {
+    font-size: 1.25rem;
+    color: #B16927;
+} 
+.datos .price .Dscto{
+    font-size: 1rem;
+    color: #B4A186;
+    text-decoration: line-through;
+}
+
+.datos .description {
+    font-size: 1rem;
+    color: #707070
+}
+
+.botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.botones button {
+    height: 3.125rem;
+    width: 18.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+}
+.botones button:hover{
+    border: 1px solid #B16927;
+    color: #B16927;
+}
+.botones button:active{
+    color: #EFEFEF;
+    border: 1px solid #B16927;
+    background-color: #B16927;
+}
+.botones .operadores {
+    height: 100%;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    background-color: #EFEFEF;
+    border-radius: 4px;
+}
+
+.botones .operadores .boton {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.botones .operadores .boton:hover {
+    background-color: rgba(68, 68, 68, 0.02);
+}
+
+.botones .operadores .boton:active {
+    color: #B16927;
+}
+.DatosExtras span{
+    color: #707070;
+}
+/* Sección Imágenes  -----------------------------------------------*/
+
+.imagenes {
+    grid-area: imagenes;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+    column-gap: 10px;
+    user-select: none;/*ELIMINIA ESTO*/
+}
+.secundarios{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+}
+.principal{
+    display: grid;
+    grid-template-rows: 96% 4%;
+}
+.principal .imgPricipal{
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.principal img{
+    overflow: hidden;
+    object-fit:contain;
+}
+.carrusel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.carrusel button{
+    background-color: rgba(112, 112, 112, 0.3);
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.carrusel button.B-Active{
+    background-color: rgba(177, 106, 39, 0.5);
+    
+}
+.carrusel button:hover{
+    background-color: rgba(112, 112, 112, 0.5);
+}

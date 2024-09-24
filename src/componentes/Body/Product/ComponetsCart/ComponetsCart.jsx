@@ -1,6 +1,7 @@
 import scrAlt from '../../../../assets/img-cart.png';
 import { IoMdRemove, IoMdAdd } from "react-icons/io";
 import './ComponetsCart.css'
+import { Link } from 'react-router-dom';
 
 function BotonCart3() {//Agotado
     return (
@@ -13,9 +14,9 @@ function BotonCart2({ cant, AccionesBotones, dataProducto }) {//Con 1 Producto e
     const { AumentarCantidad, RestarCantidad } = AccionesBotones
     return (
         <div className='BotonCart2'>
-            <div onClick={() => { RestarCantidad(dataProducto['SKU']) }} style={{ cursor: 'pointer' }}><IoMdRemove /></div>
+            <button onClick={() => { RestarCantidad(dataProducto['SKU']) }}><IoMdRemove /></button>
             <p >{cant} und{cant > 1 ? "s" : ""}</p>
-            <div onClick={() => { AumentarCantidad(dataProducto['SKU']) }} style={{ cursor: 'pointer' }}><IoMdAdd /></div>
+            <button onClick={() => { AumentarCantidad(dataProducto['SKU']) }}><IoMdAdd /></button>
         </div>
     )
 }
@@ -58,11 +59,11 @@ function PrecioCart({ precio, precioDcto }) {
         </div>
     )
 }
-function ImagenCart({ src, alt }) {
+function ImagenCart({ src, alt, SKU }) {
     return (
-        <div className='ImagenCart'>
-            <img src={src ? src : src = scrAlt} alt={alt} />
-        </div>
+        <Link to={`/Tienda/Producto/${SKU}`} className='ImagenCart'>
+                <img src={src ? src : src = scrAlt} alt={alt} />
+        </Link>
     )
 }
 

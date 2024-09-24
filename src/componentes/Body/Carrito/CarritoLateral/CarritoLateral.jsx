@@ -1,5 +1,5 @@
 import './CarritoLateral.css'
-import useCarrito from '../../../Hooks/hooks';
+import useCarrito from '../../../Hooks/useCarrito';
 import { useState, useEffect } from 'react';
 import { IoMdClose } from "react-icons/io";
 import CartProduct from '../Componets/CartProduct';

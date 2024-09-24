@@ -3,8 +3,9 @@ import logo from '../../assets/logo.png';
 import CartWidget from './CartWidget/CartWidget';
 import { IoIosSearch } from "react-icons/io";
 import CarritoLateral from '../Body/Carrito/CarritoLateral/CarritoLateral'
-import { useEffect, useState } from 'react';
-import useCarrito from '../Hooks/hooks';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function NavBar_TopBar({ openCarritoLateral, items }) {
     return (
@@ -15,15 +16,15 @@ function NavBar_TopBar({ openCarritoLateral, items }) {
                 </div>
                 <ul>
                     <li>
-                        <a href="#">Inicio</a>
-                        <span className='active'></span>
-                    </li>
-                    <li>
-                        <a href="#">Tienda</a>
+                        <Link to={`/`}>Inicio</Link>
                         <span className='no-active'></span>
                     </li>
                     <li>
-                        <a href="#">Nosotros</a>
+                        <Link to={`/Tienda`}>Tienda</Link>
+                        <span className='active'></span>
+                    </li>
+                    <li>
+                        <Link to={`/Nosotros`}>Nosotros</Link>
                         <span className='no-active'></span>
                     </li>
                     <span className='barra'></span>
@@ -37,7 +38,7 @@ function NavBar_TopBar({ openCarritoLateral, items }) {
 
     )
 }
-function NavBar({carritoHook}) {
+function NavBar({ carritoHook }) {
     const [visibleCart, setVisibleCart] = useState(false)
     const { cantAndTotal } = carritoHook
     const openCart = () => {

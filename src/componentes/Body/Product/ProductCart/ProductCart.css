@@ -7,6 +7,8 @@
     font-family: "DM Sans", sans-serif;
     font-style: normal;
     font-weight: 500;
+    text-decoration: none;
+    color: black;
 }
 
 .NombreProducto {
@@ -27,6 +29,63 @@
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
+
 .grey {
     filter: grayscale(100%);
 }
+
+.containerCategory {
+    width: 18.75rem;
+    height: 18.75rem;
+    border-radius: .5rem;
+    background-color: #FFFFFF;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    cursor: pointer;
+}
+
+.containerCategory img {
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    /* Transición suave para zoom y oscuridad */
+    z-index: 1
+}
+.containerCategory p{
+    max-width: 90%;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-transform: uppercase;
+}
+
+.containerCategory:hover img {
+    transform: scale(1.2);
+    /* Aumenta el tamaño de la imagen en un 20% */
+    filter: brightness(0.9);
+    /* Oscurece la imagen */
+    filter: blur(1.5px);
+}
+
+.containerCategory:hover p {
+    background-color: rgba(177, 106, 39);
+
+}
+
+
+.containerCategory p {
+    user-select: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 8px;
+    z-index: 2;
+    transition: background-color .3s ease;
+}
+
+

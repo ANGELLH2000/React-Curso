@@ -46,9 +46,21 @@ div p.precioDcsto {
     align-items: center;
     font-size: 1rem;
     padding: .3125rem 1.25rem;
-    border: 1px solid #B16927;
-    border-radius: .5rem;
+    border-radius: .30rem;
+    border: 1px solid #707070;
+    ;
+    color: black;
+    user-select: none;
+}
+
+.BotonCart p:hover {
     color: #B16927;
+    border-color: #B16927;
+}
+
+.BotonCart p:active {
+    color: #EFEFEF;
+    background-color: #B16927;
 }
 
 .BotonCart3 p {
@@ -66,24 +78,42 @@ div p.precioDcsto {
 }
 
 .BotonCart2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
+    justify-items: center;
+    border-radius: 4px;
 }
 
-.BotonCart2 div {
-    color: #B16927;
-    padding: .625rem 1.25rem;
-    border-radius: .5rem;
-    border: .0625rem solid #B16927;
-    display: flex;
-}
-
+.BotonCart2 button,
 .BotonCart2 p {
-    color: #707070;
-    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    background-color: #efefef62;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+
+.BotonCart2 button:active {
+    color: #B16927;
+}
+
+.BotonCart2 button:hover {
+    background-color: rgba(112, 112, 112, 0.15);
+}
+
+
+.BotonCart2 button:nth-child(1) {
+    border-radius: 4px 0 0 4px;
+}
+
+.BotonCart2 button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+
 
 
 .EtiquetaCart {
@@ -94,7 +124,7 @@ div p.precioDcsto {
     font-size: .75rem;
     background-color: transparent;
     color: transparent;
-    
+
     left: .625rem;
 
 }
@@ -146,13 +176,6 @@ div p.precioDcsto {
     /* Asegura que la imagen cubra todo el div */
     object-position: center;
     /* Centra la imagen */
-}
-
-
-.y3 p {
-    /*el left se de -45px*/
-    animation-duration: 3s;
-    animation-name: slidein;
 }
 
 @keyframes slidein {

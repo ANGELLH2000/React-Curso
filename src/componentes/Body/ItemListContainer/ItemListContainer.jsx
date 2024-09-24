@@ -1,40 +1,34 @@
 import './ItemListContainer.css'
-import ProductCart from '../Product/ProductCart/ProductCart'
-import { productos } from '../../../data/data'
-import useCarrito from '../../Hooks/hooks'
-import { useEffect } from 'react'
+import useCategorias from '../../Hooks/useCategorias'
+import {useParams } from 'react-router-dom'
+import ItemListCategorias from './ItemListCategorias'
+import ItemListProductos from './ItemListProductos'
 
-function ItemListContainer({ gretting ,carritoHook}) {
-    const {carrito,AumentarCantidad, RestarCantidad,AgregarProducto,ExistenciaDeProducto} = carritoHook
-    const AccionesBotones={
+
+function ItemListContainer({ gretting, carritoHook, categoria }) {
+    const { NombreCategoria } = useParams();
+    const { categorias, nombres } = useCategorias()
+    const { carrito, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto } = carritoHook
+    const AccionesBotones = {
         carrito,
         AgregarProducto,
         AumentarCantidad,
         RestarCantidad,
         ExistenciaDeProducto
     }
-    const agregar=(obj)=>{
-        agregarProductoAlCarrito(obj)
-    }
-
-    return (
+    if (nombres.length > 0) {
+        return (
+            <>
+                <h3>{gretting}</h3>
+                <div className='contenedor '>{/* agregar contenedor-stop cuando se abra el carrito*/}
+                    {categoria ? <ItemListCategorias categorias={categorias} /> : <ItemListProductos AccionesBotones={AccionesBotones} categorias={nombres} param={NombreCategoria} />}
+                </div>
+            </>
+        )
+    } else {
         <>
-            <h3>{gretting}</h3>
-            <div className='contenedor '>{/* agregar contenedor-stop cuando se abra el carrito*/}
-                {productos.map(
-                    producto => (
-                    <ProductCart
-                                key={producto.id}
-                                dataProducto={producto}
-                                AccionesBotones={AccionesBotones}
-                    />
-                    )
-                )}
-
-
-            </div>
         </>
-    )
+    }
 }
 
 export default ItemListContainer
