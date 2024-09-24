@@ -4,7 +4,8 @@ function Datos({data}) {
     return (
         <div className="datos">
             <p className="title">{data.nombre}</p>
-            <div className="price"><p className='Dscto'>S/. 20.00</p><p>S/. 20.00</p></div>
+            {data.precio.precioDscto &&(<div className="price"><p className='Dscto'>S/. {data.precio.precio}</p><p>S/. {data.precio.precioDscto}</p></div>)}
+            {!data.precio.precioDscto&&(<div className="price"><br /><p>S/. {data.precio.precio}</p></div>)}
             <div className="reviw">5 estrellasos</div>
             <p className="description">{data.descripcion}</p>
             <BotonesCart />
