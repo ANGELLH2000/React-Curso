@@ -1,12 +1,19 @@
 import '../CarritoLateral/CarritoLateral.css'
 import { IoMdRemove, IoMdAdd } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-function CartProduct({ dataProducto, EliminarProducto, AumentarCantidad, RestarCantidad }) {
+import { Navigate, useNavigate } from 'react-router-dom';
+function CartProduct({ dataProducto, EliminarProducto, AumentarCantidad, RestarCantidad ,cerrar}) {
+    const navigate=useNavigate()
+    const click =() =>{
+        navigate(`/Tienda/Producto/${dataProducto.SKU}`)
+        cerrar()
+        
+    }
     return (
         <div className='cart-product'>
-            <a href='#' className='img'>
+            <div className='img' onClick={click}>
                 <img src={dataProducto.scr} alt={dataProducto.descripcion} />
-            </a>
+            </div>
             <div className='datos'>
                 <div className="close" onClick={() => EliminarProducto(dataProducto['SKU'])}><IoMdClose /></div>
                 <div className="textos">

@@ -10,7 +10,6 @@ function CarritoLateral({ visible, closeCart, carritoHook }) {
     const cerrar = () => {
         setIsFade(false)
     }
-
     useEffect(() => {
         if (!isFade) {
             const timeout = setTimeout(() => {
@@ -31,7 +30,7 @@ function CarritoLateral({ visible, closeCart, carritoHook }) {
         return (<></>)
     } else {
         return (
-            <div className={`container ${isFade ? 'fade-in' : 'fade-out'}`}>
+            <div className={`container ${isFade ? 'fade-in' : 'fade-out'}`}  >
                 <div className={`shoping-cart ${isFade ? 'slideIn' : 'slideOut'}`}>
                     <div className='top'>
                         <div className='top-title'>
@@ -48,6 +47,7 @@ function CarritoLateral({ visible, closeCart, carritoHook }) {
                                         EliminarProducto={EliminarProducto}
                                         AumentarCantidad={AumentarCantidad}
                                         RestarCantidad={RestarCantidad}
+                                        cerrar={cerrar}
                                     />
                                 )
                             )}

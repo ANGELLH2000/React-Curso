@@ -4,7 +4,7 @@ import Imagenes from './Imagenes'
 import './ProductPage.css'
 import useProducto from '../../../Hooks/useProducto'
 import { useEffect } from 'react'
-function ProductPage() {
+function ProductPage({carritoHook}) {
     const { SKU } = useParams()
     const { Buscar, infoProducto, loading } = useProducto()
     useEffect(() => {
@@ -26,7 +26,7 @@ function ProductPage() {
             <>
                 <div className="container-producto">
                     <Imagenes data={infoProducto} />
-                    <Datos data={infoProducto} />
+                    <Datos data={infoProducto} carritoHook={carritoHook}/>
                 </div>
             </>
         ) 

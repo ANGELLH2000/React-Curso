@@ -51,7 +51,16 @@
     align-items: center;
     gap: 10px;
 }
+.sinStock{
+    color: #b93f3f;
 
+}
+.noBotton{
+    height: 3.125rem;
+    width: 18.75rem;
+    background-color: transparent;
+    user-select: none;
+}
 .botones button {
     height: 3.125rem;
     width: 18.75rem;
@@ -82,7 +91,9 @@
     background-color: #EFEFEF;
     border-radius: 4px;
 }
-
+.botones .operadores p{
+    user-select: none;
+}
 .botones .operadores .boton {
     display: grid;
     place-items: center;
@@ -96,7 +107,7 @@
 }
 
 .botones .operadores .boton:active {
-    color: #B16927;
+    background-color: rgba(68, 68, 68, 0.11);
 }
 .DatosExtras span{
     color: #707070;

@@ -29,7 +29,7 @@ function App() {
         <Route path="/Tienda" element={<ItemListContainer gretting="Bienvenido a la tienda, Estas son nuestras CATEGORÍAS" carritoHook={carritoHook} categoria={true} />} />
         <Route path="/Tienda/Categoria" element={<Navigate to="/Tienda" />} />
         <Route path='/Tienda/Categoria/:NombreCategoria' element={<ItemListContainer gretting="Categoria tipo" carritoHook={carritoHook} categoria={false} />} />
-        <Route path='/Tienda/Producto/:SKU' element={<ProductPage/>} />
+        <Route path='/Tienda/Producto/:SKU' element={<ProductPage carritoHook={carritoHook}/>} />
         <Route path='/Nosotros' element={<NosotrosPage/>} />
         <Route path='*' element={<><br /><br /><br /><br /><br /><br /><br /><h1>Error</h1></>} />
       </Routes>
