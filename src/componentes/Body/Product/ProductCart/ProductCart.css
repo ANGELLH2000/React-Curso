@@ -35,8 +35,8 @@
 }
 
 .containerCategory {
-    width: 18.75rem;
-    height: 18.75rem;
+    width: 210px;
+    height: 210px;
     border-radius: .5rem;
     background-color: #FFFFFF;
     position: relative;
@@ -52,32 +52,29 @@
 .containerCategory img {
     object-fit: cover;
     object-position: center;
+    filter: brightness(0.85);
     transition: transform 0.3s ease, filter 0.3s ease;
-    /* Transición suave para zoom y oscuridad */
     z-index: 1
-}
-.containerCategory p{
-    max-width: 90%;
-    overflow: hidden;
-    word-wrap: break-word;
-    text-transform: uppercase;
 }
 
 .containerCategory:hover img {
     transform: scale(1.2);
-    /* Aumenta el tamaño de la imagen en un 20% */
     filter: brightness(0.9);
-    /* Oscurece la imagen */
     filter: blur(1.5px);
 }
 
-.containerCategory:hover p {
+.containerCategory:hover p.nombreCategoria {
     background-color: rgba(177, 106, 39);
 
 }
 
 
-.containerCategory p {
+.containerCategory p.nombreCategoria {
+    font-size: 14px;
+    max-width: 90%;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-transform: uppercase;
     user-select: none;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.85);
@@ -87,5 +84,3 @@
     z-index: 2;
     transition: background-color .3s ease;
 }
-
-
