@@ -1,4 +1,4 @@
-import ProductCart from '../../Product/ProductCart/ProductCart'
+import ProductCart from '../../../Product/ProductCart/ProductCart'
 function ListaProductos({ carritoHook, NombreCategoria, data }) {
     if (NombreCategoria == "Todos") {
         return (
@@ -12,6 +12,7 @@ function ListaProductos({ carritoHook, NombreCategoria, data }) {
                     />
                 ))}
             </div>
+            
         )
 
     } else {

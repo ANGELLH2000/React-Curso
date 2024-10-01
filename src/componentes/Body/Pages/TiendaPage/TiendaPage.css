@@ -6,100 +6,189 @@
     font-style: normal;
     font-weight: 500;
 }
-.container-Tienda{
+
+body {
+    background-color: #FBFBFB;
+}
+
+.container-Tienda {
     padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1400px 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    ". TopCategory."
-    ". container-productos.";
-    gap: 100px;
+    grid-template-areas:
+        ". Title ."
+        ". container-productos.";
+    gap: 50px;
     margin-bottom: 200px;
 }
-.TopCategory{
-    grid-area: TopCategory;
+
+.grid-container {
+    padding-top: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". Slider ."
+        ". SeccionCategorias ."
+        ". SeccionProducto .";
+    gap: 50px;
+    margin-bottom: 200px;
 }
-.TopCategory h2{
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-.TopCategory p.title{
-    font-size: 20px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #B16927;
-    font-weight: 700;
+
+.grid-container .slider {
+    grid-area: Slider;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
     user-select: none;
+}
+.grid-container .SeccionProducto{
+    grid-area: SeccionProducto;
+    display: grid;
+    grid-template-columns: auto 480px;
+    grid-template-rows:auto  400px;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 50px;
+}
+.grid-container .SeccionProducto h3{
+    padding: 10px;
+    justify-self: center;
+    user-select: none;
+}
+.grid-container .SeccionProducto img{
+    grid-row: 2;
+    grid-column: 1/2;
+    height: 100%;
+    background-color: aqua;
+    object-fit: cover;
+    justify-self: flex-end;
 
 }
-.categorias-populares{
-    padding: 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.grid-container .SeccionProducto .datos{
+    grid-row: 2;
+    grid-column: 2/3;
+    justify-self: flex-start;
+
 }
-.container-productos{
+.grid-container .SeccionCategorias {
+    grid-area: SeccionCategorias;
+    justify-self: center;
+    width: 57%;
+}
+
+.SeccionCategorias .flex-container {
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+}
+.SeccionCategorias .title p{
+    text-transform: uppercase;
+}
+.SeccionCategorias .title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.SeccionCategorias .title a {
+    color: #B16927;
+    text-decoration: underline;
+}
+
+.slider img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.container-Tienda .title {
+    grid-area: Title;
+}
+
+.title h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.title p.links,
+p.links a {
+    user-select: none;
+    font-size: 24px;
+    color: #707070;
+}
+
+.container-productos {
     grid-area: container-productos;
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 260px 85%;
     grid-template-areas: "categoriasTodas listaProductos";
 }
-.categoriasTodas{
+
+.categoriasTodas {
     grid-area: categoriasTodas;
+    padding: 5px;
 }
-.categoriasTodas p{
-    text-align: center;
-    margin-bottom: 10px;
-}
-.categoriasTodas ul{
-    margin-bottom: 50px;
-}
-.categoriasTodas ul.categoriaActual li{
-    background-color: rgba(177, 106, 39, 0.75);
-    color: white;
-    text-align: center;
+
+.categoriasTodas ul.categorias li {
+    padding: 5px 10px;
+    margin: 0;
+    background-color: white;
     border-radius: 4px;
     width: 100%;
-    margin: 0;
-    padding: 10px 5px;
-    margin-bottom: 10px;
-    user-select: none;
-}
-.categoriasTodas ul.categorias li{
-    background-color: rgba(0, 0, 0, 0.08); 
-    text-align: center;
-    border-radius: 4px;
-    width: 100%;
-    margin: 0;
-    padding: 10px 5px;
-    margin-bottom: 10px;
     cursor: pointer;
     user-select: none;
-    position: relative;
-    transition: background-color .9s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    transition: background-color .4s ease;
 }
-.categoriasTodas ul.categorias li span{
-    width: 0%;
-    height: 1px;
-    position: absolute;
-    background-color: black;
-    bottom: 0;
-    transition: width 1s ease;
+
+ul.categorias li a {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: .625rem .3125rem;
 }
-.categoriasTodas ul.categorias li:hover span{
-    width: 100%; 
+
+ul.categorias li a.actual p,
+a.actual svg {
+    color: #B16927;
+    fill: #B16927;
 }
-.categoriasTodas ul.categorias li:hover{
-    background-color: rgba(0, 0, 0, 0.03); 
+
+.categoriasTodas ul.categorias li:hover {
+    background-color: rgba(0, 0, 0, 0.03);
 }
-.listaProductos{
+
+.listaProductos {
     grid-area: listaProductos;
     padding-left: 8%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 50px;
+}
+
+.efecto1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+    /* Aplica una animación automática */
+}
+.efecto2 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s ease forwards;
+    /* Aplica una animación automática */
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

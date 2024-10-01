@@ -5,6 +5,7 @@ function useFetch() {
     const [dataProductos, setDataProductos] = useState([])
     const [loading, setLoading] = useState(true);
     function FechtProducto() {
+        console.log("QUE FUE?")
         fetch('/database.json')
             .then(response => {
                 if (!response.ok) {

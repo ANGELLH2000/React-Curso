@@ -62,7 +62,7 @@ function PrecioCart({ precio, precioDcto }) {
 function ImagenCart({ src, alt, SKU }) {
     return (
         <Link to={`/Tienda/Producto/${SKU}`} className='ImagenCart'>
-            <img src={src ? src : src = scrAlt} alt={alt} />
+            <img loading='lazy' src={src ? src : src = scrAlt} alt={alt} />
         </Link>
     )
 }
