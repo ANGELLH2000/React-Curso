@@ -1,0 +1,172 @@
+.grid-container {
+    padding-top: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". Slider ."
+        ". SeccionCategorias ."
+        ". SeccionProducto .";
+    gap: 50px;
+    margin-bottom: 200px;
+}
+
+.grid-container .slider {
+    grid-area: Slider;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    user-select: none;
+}
+
+.grid-container .slider img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.grid-container .SeccionProducto {
+    grid-area: SeccionProducto;
+    display: grid;
+    grid-template-columns: 500px auto;
+    grid-template-rows: auto 500px;
+    justify-content: center;
+    column-gap: 60px;
+    row-gap: 40px;
+    margin-top: 50px;
+}
+
+.grid-container .SeccionProducto h3 {
+    grid-column: span 2;
+    grid-row: span 1;
+    padding: 10px;
+    justify-self: center;
+}
+
+.grid-container .SeccionProducto img {
+    grid-column: 1/2;
+    height: 100%;
+    object-fit: cover;
+    justify-self: flex-end;
+
+}
+
+.grid-container .SeccionProducto .info {
+    grid-column: 2/3;
+    width: 30.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3.125rem
+}
+
+.grid-container .SeccionProducto .info button {
+    background-color: #B16927;
+    border: 1px solid #B16927;
+    color: white;
+    user-select: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    align-self: center;
+    transition: background-color .6s , color .4s;
+}
+.grid-container .SeccionProducto .info button:hover{
+    background-color: white;
+    color: #B16927;
+}
+.grid-container .SeccionProducto .info .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3125rem;
+}
+
+.grid-container .SeccionProducto .info .flex p {
+    font-size: 20px;
+    color: #707070;
+    text-align: center;
+}
+
+.grid-container .SeccionProducto .info .flex h4 {
+    font-size: 24px;
+}
+
+.grid-container .SeccionCategorias {
+    grid-area: SeccionCategorias;
+    justify-self: center;
+    width: 57%;
+}
+
+.grid-container .SeccionCategorias .flex-container {
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+}
+
+.grid-container .SeccionCategorias .title p,
+.grid-container .SeccionProducto h3 {
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.grid-container .SeccionCategorias .title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-container .SeccionCategorias .title a {
+    color: #B16927;
+    text-decoration: underline;
+}
+
+.efecto1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+    /* Aplica una animación automática */
+}
+
+.efecto2 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s ease forwards;
+    /* Aplica una animación automática */
+}
+.efecto3-1 {
+    animation: fadeIn3 2s ease forwards;
+    /* Aplica una animación automática */
+}
+.efecto3-2 {
+    opacity: 1;
+    animation: fadeIn2 1s ease forwards;
+    /* Aplica una animación automática */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeIn2 {
+    to {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
+@keyframes fadeIn3 {
+    50% {
+        opacity: 1;
+        transform: translateX(200px);
+        scale: 1.5;
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(200px);
+        scale: 1.5;
+    }
+}

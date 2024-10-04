@@ -6,8 +6,8 @@ function BarraCategorias({ categorias, NombreCategoria }) {
         <div className="categoriasTodas">
             <ul className="categorias">
                 {categorias.map(categoria => (
-                    <li>
-                        <Link key={categoria.Id} to={`/Tienda/Categoria/${categoria.Nombre}`} className={categoria.Nombre==NombreCategoria?`actual`:null}>
+                    <li key={categoria.Id}>
+                        <Link to={`/Tienda/Categoria/${categoria.Nombre}`} className={categoria.Nombre==NombreCategoria?`actual`:null}>
                             <p>{categoria.Nombre}</p>
                             <FaChevronRight />
                         </Link>

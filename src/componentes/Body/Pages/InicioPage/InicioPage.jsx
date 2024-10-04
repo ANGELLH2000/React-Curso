@@ -1,9 +1,17 @@
-
-function InicioPage() {
+import useCategorias from '../../../Hooks/useCategorias'
+import SeccionCategorias from './components/SeccionCategorias'
+import SeccionProducto from './components/SeccionProducto'
+import './Inicio.css'
+function InicioPage({carritoHook}) {
+    const { categorias} = useCategorias()
+    
     return (
-        <div>
-            <br /><br /><br /><br /><br /><br /><br />
-            <h1>Inicio</h1>
+        <div className='grid-container'>
+            <div className="slider efecto2">
+                <img src="/banner.jpg" alt="" />
+            </div>
+            <SeccionCategorias categorias={categorias}/>
+            <SeccionProducto />
         </div>
     )
 }

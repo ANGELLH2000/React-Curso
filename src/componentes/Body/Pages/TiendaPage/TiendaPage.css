@@ -23,88 +23,6 @@ body {
     margin-bottom: 200px;
 }
 
-.grid-container {
-    padding-top: 90px;
-    display: grid;
-    grid-template-columns: 1fr 1400px 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        ". Slider ."
-        ". SeccionCategorias ."
-        ". SeccionProducto .";
-    gap: 50px;
-    margin-bottom: 200px;
-}
-
-.grid-container .slider {
-    grid-area: Slider;
-    height: 500px;
-    overflow: hidden;
-    display: flex;
-    user-select: none;
-}
-.grid-container .SeccionProducto{
-    grid-area: SeccionProducto;
-    display: grid;
-    grid-template-columns: auto 480px;
-    grid-template-rows:auto  400px;
-    justify-content: center;
-    column-gap: 10px;
-    margin-top: 50px;
-}
-.grid-container .SeccionProducto h3{
-    padding: 10px;
-    justify-self: center;
-    user-select: none;
-}
-.grid-container .SeccionProducto img{
-    grid-row: 2;
-    grid-column: 1/2;
-    height: 100%;
-    background-color: aqua;
-    object-fit: cover;
-    justify-self: flex-end;
-
-}
-.grid-container .SeccionProducto .datos{
-    grid-row: 2;
-    grid-column: 2/3;
-    justify-self: flex-start;
-
-}
-.grid-container .SeccionCategorias {
-    grid-area: SeccionCategorias;
-    justify-self: center;
-    width: 57%;
-}
-
-.SeccionCategorias .flex-container {
-    display: flex;
-    gap: 20px;
-    flex-flow: row wrap;
-    justify-content: space-between;
-
-}
-.SeccionCategorias .title p{
-    text-transform: uppercase;
-}
-.SeccionCategorias .title {
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.SeccionCategorias .title a {
-    color: #B16927;
-    text-decoration: underline;
-}
-
-.slider img {
-    width: 100%;
-    object-fit: cover;
-}
-
 .container-Tienda .title {
     grid-area: Title;
 }
@@ -172,23 +90,4 @@ a.actual svg {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 50px;
-}
-
-.efecto1 {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease forwards;
-    /* Aplica una animación automática */
-}
-.efecto2 {
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeIn 1s ease forwards;
-    /* Aplica una animación automática */
-}
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }

@@ -2,10 +2,10 @@ import './TiendaPage.css'
 import useCategorias from "../../../Hooks/useCategorias"
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom"
-import ListaProductos from "./componentes/ListaProductos";
-import BarraCategorias from "./componentes/BarraCategorias"
+import ListaProductos from "./components/ListaProductos";
+import BarraCategorias from "./components/BarraCategorias"
 
-function TiendaCategoriaPage({carritoHook,data}) {
+function TiendaPage({carritoHook,data}) {
     const { NombreCategoria } = useParams();
     const { categorias} = useCategorias()
     if(data.loading){
@@ -30,4 +30,4 @@ function TiendaCategoriaPage({carritoHook,data}) {
     
 }
 
-export default TiendaCategoriaPage
+export default TiendaPage
