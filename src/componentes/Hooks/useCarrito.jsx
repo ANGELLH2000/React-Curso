@@ -89,9 +89,9 @@ function useCarrito() {
         if (carrito.length > 0) {
             for (const producto of carrito) {
                 let precioPorProducto=0
-                producto.precio.precioDscto?precioPorProducto=producto.precio.precioDscto:precioPorProducto=producto.precio.precio
-                total = total + (precioPorProducto * producto.estadoProducto.agregados)
-                totalItems = totalItems + (producto.estadoProducto.agregados)
+                producto.precioDscto?precioPorProducto=producto.precioDscto:precioPorProducto=producto.precio
+                total = total + (precioPorProducto * producto.agregados)
+                totalItems = totalItems + (producto.agregados)
 
             }
             total = Math.round(total * 100) / 100;
@@ -130,7 +130,7 @@ function useCarrito() {
         const carro = cargarCarrito()
         for (const producto of carro) {
             if (producto['SKU'] === SKU) {
-                producto.estadoProducto.agregados += cantidad
+                producto.agregados += cantidad
             }
         }
         ActualizarLocalStorage(carro)
@@ -147,12 +147,12 @@ function useCarrito() {
         let eliminado = false
         for (const producto of carro) {
             if (producto['SKU'] === SKU) {
-                if (producto.estadoProducto.agregados === cantidad) {
+                if (producto.agregados === cantidad) {
                     eliminado = true
                     EliminarProducto(SKU)
                     break
                 } else {
-                    producto.estadoProducto.agregados -= cantidad
+                    producto.agregados -= cantidad
                 }
             }
         }
@@ -166,7 +166,7 @@ function useCarrito() {
      */
     function AgregarProducto(Producto) {
         const carritoLocal = cargarCarrito()
-        Producto.estadoProducto.agregados = 1
+        Producto.agregados = 1
         carritoLocal.push(Producto)
         ActualizarLocalStorage(carritoLocal)
 
@@ -180,7 +180,7 @@ function useCarrito() {
         const carritoLocal = cargarCarrito()
         for (const producto of carritoLocal) {
             if (producto['SKU'] === SKU) {
-                return ([true,producto.estadoProducto.agregados])
+                return ([true,producto.agregados])
             }
         }
         return ([false,0])

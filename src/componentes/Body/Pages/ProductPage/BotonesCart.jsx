@@ -28,7 +28,7 @@ function Stock({carritoHook,data}) {
     )
 }
 function BotonesCart({data, carritoHook}) {
-    if(!data.estadoProducto.outsold){
+    if(!data.outsold){
         return(<Stock carritoHook={carritoHook} data={data}/>)
     }else{
         return(<SinStock/>)

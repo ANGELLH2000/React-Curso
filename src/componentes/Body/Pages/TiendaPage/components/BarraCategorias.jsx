@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom"
 import { FaChevronRight } from "react-icons/fa6";
-function BarraCategorias({ categorias, NombreCategoria }) {
-
+function BarraCategorias({ FireCategoria, NombreCategoria }) {
     return (
         <div className="categoriasTodas">
             <ul className="categorias">
-                {categorias.map(categoria => (
-                    <li key={categoria.Id}>
-                        <Link to={`/Tienda/Categoria/${categoria.Nombre}`} className={categoria.Nombre==NombreCategoria?`actual`:null}>
-                            <p>{categoria.Nombre}</p>
+                {FireCategoria.map(categoria => (
+                    <li key={categoria.id}>
+                        <Link to={`/Tienda/Categoria/${categoria.title}`} className={categoria.title==NombreCategoria?`actual`:null}>
+                            <p>{categoria.title}</p>
                             <FaChevronRight />
                         </Link>
                     </li>

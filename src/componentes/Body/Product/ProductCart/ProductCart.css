@@ -13,6 +13,7 @@
 
 .NombreProducto {
     font-size: 1.25rem;
+    text-align: center;
 }
 
 .containerCart {

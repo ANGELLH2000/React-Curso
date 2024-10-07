@@ -12,7 +12,7 @@
     background-color: firebrick;
     overflow: hidden;
 }
-.container {
+.containerCartShop {
     z-index: 20;
     position:fixed;
     height: 100vh;

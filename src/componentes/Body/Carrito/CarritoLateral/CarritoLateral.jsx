@@ -30,7 +30,7 @@ function CarritoLateral({ visible, closeCart, carritoHook }) {
         return (<></>)
     } else {
         return (
-            <div className={`container ${isFade ? 'fade-in' : 'fade-out'}`}  >
+            <div className={`containerCartShop ${isFade ? 'fade-in' : 'fade-out'}`}  >
                 <div className={`shoping-cart ${isFade ? 'slideIn' : 'slideOut'}`}>
                     <div className='top'>
                         <div className='top-title'>

@@ -4,29 +4,33 @@ import Imagenes from './Imagenes'
 import './ProductPage.css'
 import useProducto from '../../../Hooks/useProducto'
 import { useEffect } from 'react'
+import useFireBase from '../../../Hooks/useFireBase'
+import Loader from '../../Loader/Loader'
 function ProductPage({carritoHook}) {
+    const {dataProducto,fireLoading,traerProducto}=useFireBase()
     const { SKU } = useParams()
     const { Buscar, infoProducto, loading } = useProducto()
     useEffect(() => {
+        traerProducto(SKU)
         Buscar(SKU)
     }, [SKU,loading]); // Solo se ejecuta cuando cambia SKU o Buscar
+    //console.log(dataProducto,fireLoading,"Aqui")
 
-    if(loading){
+    if(fireLoading){
         return(
-            <p>Cargando</p>
+            <Loader/>
         )
     }
-    if(!infoProducto){
+    if(dataProducto===null){//////Mejorar codigo para llevara a pagina de error
         return(
             <Navigate to="/Tienda"/>
         )
-    }
-    if(typeof(infoProducto.id)==="number"){
+    }else{
         return (
             <>
                 <div className="container-producto">
-                    <Imagenes data={infoProducto} />
-                    <Datos data={infoProducto} carritoHook={carritoHook}/>
+                    <Imagenes FireData={dataProducto} data={infoProducto} />
+                    <Datos FireData={dataProducto} carritoHook={carritoHook}/>
                 </div>
             </>
         ) 

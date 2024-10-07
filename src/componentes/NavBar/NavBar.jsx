@@ -5,9 +5,12 @@ import { IoIosSearch } from "react-icons/io";
 import CarritoLateral from '../Body/Carrito/CarritoLateral/CarritoLateral'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { GlobalContext } from '../Context/Conntext';
 
 
 function NavBar_TopBar({ openCarritoLateral, items }) {
+    const{pagina}=useContext(GlobalContext)
     return (
         <div className='fixed'>
             <nav>
@@ -17,15 +20,15 @@ function NavBar_TopBar({ openCarritoLateral, items }) {
                 <ul>
                     <li>
                         <Link to={`/`}>Inicio</Link>
-                        <span className='no-active'></span>
+                        <span className={pagina==="Inicio"?'active':'no-active'}></span>
                     </li>
                     <li>
                         <Link to={`/Tienda`}>Tienda</Link>
-                        <span className='active'></span>
+                        <span className={pagina==="Tienda"?'active':'no-active'}></span>
                     </li>
                     <li>
                         <Link to={`/Nosotros`}>Nosotros</Link>
-                        <span className='no-active'></span>
+                        <span className={pagina==="Nosotros"?'active':'no-active'}></span>
                     </li>
                     <span className='barra'></span>
                     <div className='icons-navbar'>

@@ -12,30 +12,30 @@ function CartProduct({ dataProducto, EliminarProducto, AumentarCantidad, RestarC
     return (
         <div className='cart-product'>
             <div className='img' onClick={click}>
-                <img src={dataProducto.scr} alt={dataProducto.descripcion} />
+                <img src={dataProducto.src} alt={dataProducto.title} />
             </div>
             <div className='datos'>
                 <div className="close" onClick={() => EliminarProducto(dataProducto['SKU'])}><IoMdClose /></div>
                 <div className="textos">
-                    <p className={`${(dataProducto.nombre).length > 15 ? 'title-xl' : ''}`}>{dataProducto.nombre}</p>
+                    <p className={`${(dataProducto.title).length > 15 ? 'title-xl' : ''}`}>{dataProducto.title}</p>
                     <p className='c-707070'>Datos adicional</p>
-                    {dataProducto.precio.precioDscto && (
+                    {dataProducto.precioDscto && (
                         <div className='precios'>
-                            <p className='c-707070 line-through'>S/. {dataProducto.precio.precio}</p>
-                            <p className='c-B16927'>S/. {dataProducto.precio.precioDscto}</p>
+                            <p className='c-707070 line-through'>S/. {dataProducto.precio}</p>
+                            <p className='c-B16927'>S/. {dataProducto.precioDscto}</p>
                         </div>)
                     }
-                    {!dataProducto.precio.precioDscto && (
+                    {!dataProducto.precioDscto && (
                         <div className='precios'>
                             <br />
-                            <p className='c-B16927'>S/. {dataProducto.precio.precio}</p>
+                            <p className='c-B16927'>S/. {dataProducto.precio}</p>
                         </div>)
                     }
                     
                 </div>
                 <div className='cart-bottons'>
                     <button onClick={() => RestarCantidad(dataProducto['SKU'])}><IoMdRemove /></button>
-                    <p>{dataProducto.estadoProducto.agregados > 1 ? dataProducto.estadoProducto.agregados + " Unidades" : dataProducto.estadoProducto.agregados + " Unidad"}</p>
+                    <p>{dataProducto.agregados > 1 ? dataProducto.agregados + " Unidades" : dataProducto.agregados + " Unidad"}</p>
                     <button onClick={() => AumentarCantidad(dataProducto['SKU'])}><IoMdAdd /></button>
                 </div>
 

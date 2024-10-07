@@ -1,16 +1,16 @@
 import CategoryCart from '../../../Product/ProductCart/CategoryCart';
 import { HashLink } from 'react-router-hash-link';
 
-function SeccionCategorias({ categorias }) {
+function SeccionCategorias({FireInfo}) {
     return (
         <div className='SeccionCategorias efecto1'>
             <div className="title">
                 <p>Categorías Populares</p>
-                <HashLink smooth to="/Tienda/Categoria/Panadería#title">Ver Tienda</HashLink>
+                <HashLink smooth to="/Tienda/Categoria/Todo#title">Ver Tienda</HashLink>
             </div>
             <div className='flex-container'>
-                {categorias.map(categoria => (
-                    <CategoryCart key={categoria.Id} categoriaData={categoria} />
+                {FireInfo.map(info => (
+                    <CategoryCart key={info.id} categoriaData={info}/>
                 ))}
             </div>
         </div>
