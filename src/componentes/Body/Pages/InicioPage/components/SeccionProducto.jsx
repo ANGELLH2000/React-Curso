@@ -21,7 +21,7 @@ const SeccionProducto = ({ FireInfo }) => {
     return (
         <div className="SeccionProducto">
             <h3>Producto del mes</h3>
-            <img ref={imagen} src="/tiramisu.jpg" alt="Postre del mes" />
+            <img ref={imagen} src={FireInfo[0].src} alt="Postre del mes" />
             <div ref={texto} className="info">
                 <div className="flex">
                     <h4>{FireInfo[0].Nombre}</h4>

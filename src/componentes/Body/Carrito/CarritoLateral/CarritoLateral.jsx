@@ -6,7 +6,7 @@ import CartProduct from '../Componets/CartProduct';
 function CarritoLateral({ visible, closeCart, carritoHook }) {
     const [isFade, setIsFade] = useState(true);
     const [isVisible, setIsVisible] = useState(visible);
-    const { carrito, traerCarritoAlState,EliminarProducto,AumentarCantidad,RestarCantidad,cantAndTotal} = carritoHook
+    const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, cantAndTotal } = carritoHook
     const cerrar = () => {
         setIsFade(false)
     }
@@ -48,15 +48,14 @@ function CarritoLateral({ visible, closeCart, carritoHook }) {
                                         AumentarCantidad={AumentarCantidad}
                                         RestarCantidad={RestarCantidad}
                                         cerrar={cerrar}
-                                    />
-                                )
+                                    />)
                             )}
                         </div>
                     </div>
                     <span className='skip'></span>
                     <div className='bottom'>
                         <div className='total-bottom'>
-                            <p>Subtotal ({cantAndTotal[2]}{cantAndTotal[2]>1 || cantAndTotal[2]=== 0 ?" Unidades":" Unidad"})</p>
+                            <p>Subtotal ({cantAndTotal[2]}{cantAndTotal[2] > 1 || cantAndTotal[2] === 0 ? " Unidades" : " Unidad"})</p>
                             <p>S/.{cantAndTotal[1]}</p>
                         </div>
                         <button className='boton-bottom' >Ver Carrito</button>

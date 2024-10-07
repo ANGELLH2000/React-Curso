@@ -9,8 +9,7 @@ import { useContext } from 'react';
 import { GlobalContext } from '../Context/Conntext';
 
 
-function NavBar_TopBar({ openCarritoLateral, items }) {
-    const{pagina}=useContext(GlobalContext)
+function NavBar_TopBar({ openCarritoLateral, items,pagina }) {
     return (
         <div className='fixed'>
             <nav>
@@ -41,8 +40,9 @@ function NavBar_TopBar({ openCarritoLateral, items }) {
 
     )
 }
-function NavBar({ carritoHook }) {
+function NavBar() {
     const [visibleCart, setVisibleCart] = useState(false)
+    const{pagina,carritoHook}=useContext(GlobalContext)
     const { cantAndTotal } = carritoHook
     const openCart = () => {
         setVisibleCart(true)
@@ -52,7 +52,7 @@ function NavBar({ carritoHook }) {
     }
     return (
         <>
-            <NavBar_TopBar openCarritoLateral={openCart} items={cantAndTotal[2]} />
+            <NavBar_TopBar openCarritoLateral={openCart} items={cantAndTotal[2]} pagina={pagina} />
             <CarritoLateral visible={visibleCart} closeCart={closeCart} carritoHook={carritoHook} />
         </>
     )

@@ -8,8 +8,8 @@ import { GlobalContext } from '../../../Context/Conntext';
 import useFireBase from '../../../Hooks/useFireBase';
 import Loader from '../../Loader/Loader';
 
-function TiendaPage({carritoHook}) {
-    const{cambioPagina,dataCategorias,dataProductos}=useContext(GlobalContext)
+function TiendaPage() {
+    const{cambioPagina,dataCategorias,dataProductos,carritoHook}=useContext(GlobalContext)
     const { NombreCategoria } = useParams();
     const navigate =useNavigate()
     let error=true

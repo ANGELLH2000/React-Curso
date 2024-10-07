@@ -52,7 +52,7 @@ function useFireBase() {
         return getDocs(docRef)
             .then((snapshot) => {
                 if (snapshot.size > 0) {
-                    setDataProducto(snapshot.docs[0].data())
+                    setDataProducto({id: snapshot.docs[0].id, ...snapshot.docs[0].data()})
                 } else {
                     setDataProducto(null)
                 }
