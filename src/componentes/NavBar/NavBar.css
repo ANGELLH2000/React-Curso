@@ -9,7 +9,13 @@
     font-weight: 500;
     
 }
-
+body::-webkit-scrollbar {
+    display:block;
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(177, 106, 39, 1);
+}
 .fixed {
     z-index: 20;
     position: fixed;
