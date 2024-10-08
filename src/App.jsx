@@ -6,6 +6,7 @@ import InicioPage from './componentes/Body/Pages/InicioPage/InicioPage'
 import TiendaPage from './componentes/Body/Pages/TiendaPage/TiendaPage'
 import GlobalProvider from './componentes/Context/Conntext'
 import CarritoPage from './componentes/Body/Pages/CarritoPage/CarritoPage'
+import PedidoPage from './componentes/Body/Pages/PedidoPage/PedidoPage'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/Tienda/Producto/:SKU' element={<ProductPage />} />
           <Route path='/Nosotros' element={<NosotrosPage />} />
           <Route path='/Checkout' element={<CarritoPage/>} />
+          <Route path='/Pedido/:IdColeccion' element={<PedidoPage/>} />
           <Route path='*' element={<><br /><br /><br /><br /><br /><br /><br /><h1>Error</h1></>} />
         </Routes>
       </GlobalProvider>
