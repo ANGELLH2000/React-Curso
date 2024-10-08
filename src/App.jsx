@@ -5,6 +5,7 @@ import NosotrosPage from './componentes/Body/Pages/NosotrosPage/NosotrosPage'
 import InicioPage from './componentes/Body/Pages/InicioPage/InicioPage'
 import TiendaPage from './componentes/Body/Pages/TiendaPage/TiendaPage'
 import GlobalProvider from './componentes/Context/Conntext'
+import CarritoPage from './componentes/Body/Pages/CarritoPage/CarritoPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/Tienda/Categoria/:NombreCategoria' element={<TiendaPage />} />
           <Route path='/Tienda/Producto/:SKU' element={<ProductPage />} />
           <Route path='/Nosotros' element={<NosotrosPage />} />
+          <Route path='/Checkout' element={<CarritoPage/>} />
           <Route path='*' element={<><br /><br /><br /><br /><br /><br /><br /><h1>Error</h1></>} />
         </Routes>
       </GlobalProvider>

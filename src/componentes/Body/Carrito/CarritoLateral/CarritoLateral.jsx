@@ -2,11 +2,17 @@ import './CarritoLateral.css'
 import { useState, useEffect } from 'react';
 import { IoMdClose } from "react-icons/io";
 import CartProduct from '../Componets/CartProduct';
+import { useNavigate } from 'react-router-dom';
 
 function CarritoLateral({ visible, closeCart, carritoHook }) {
     const [isFade, setIsFade] = useState(true);
     const [isVisible, setIsVisible] = useState(visible);
+    const navigate=useNavigate()
     const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, cantAndTotal } = carritoHook
+    const IrCheckout = ()=>{
+        cerrar();
+        navigate('/Checkout')
+    }
     const cerrar = () => {
         setIsFade(false)
     }
@@ -58,7 +64,7 @@ function CarritoLateral({ visible, closeCart, carritoHook }) {
                             <p>Subtotal ({cantAndTotal[2]}{cantAndTotal[2] > 1 || cantAndTotal[2] === 0 ? " Unidades" : " Unidad"})</p>
                             <p>S/.{cantAndTotal[1]}</p>
                         </div>
-                        <button className='boton-bottom' >Ver Carrito</button>
+                        <button className='boton-bottom' onClick={IrCheckout} >Ver Carrito</button>
                     </div>
                 </div>
             </div>
