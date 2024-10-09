@@ -8,7 +8,7 @@ function PedidPage() {
         <div className='container-PedidosPage'>
             <div className="Indicaciones">
                 <div className="general">
-                    <FaCheck />
+                    <FaCheck className='hola'/>
                     <h1>N° de Pedido: 12WEfwe!£e32</h1>
                     <h2>¡Pedido realizado con éxito!</h2>
                     <p>Gracias por tu compra. Tu pedido ha sido creado correctamente.</p>

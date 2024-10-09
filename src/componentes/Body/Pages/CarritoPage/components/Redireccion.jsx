@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaRegFaceGrinWink } from "react-icons/fa6";
 import { Link, useNavigate } from 'react-router-dom';
 function Redireccion() {
-    const[contador,setContador]=useState(5)
+    const[contador,setContador]=useState(7)
     const navigate=useNavigate()
     useEffect(()=>{
         

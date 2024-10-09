@@ -1,0 +1,126 @@
+@keyframes NosotrosfadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        transform: translateY(0);
+    }
+}
+.container-NosotrosPage{
+    padding-top: 170px;
+    display: grid;
+    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    row-gap: 150px;
+}
+.container-NosotrosPage .Nosotros{
+    grid-column: 2/3;
+    grid-row: 1;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: NosotrosfadeIn 2s ease forwards;
+}
+.container-NosotrosPage .Nosotros h3{
+    font-size: 50px;
+    font-weight: bold;
+}
+.container-NosotrosPage .Nosotros p{
+    font-size: 20px;
+    text-align: center;
+}
+.container-NosotrosPage .row2{
+    z-index: 1;
+    background-color: #facda3;
+    clip-path: polygon(0 27%, 100% 0%, 100% 71%, 0% 100%);
+    padding: 100px 0;
+    height: 100%;
+    width: 100%;
+    grid-row: 2;
+    grid-column: 1/-1;
+}
+.container-NosotrosPage .Mision{
+    z-index: 2;
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    overflow: hidden;
+}
+
+.container-NosotrosPage .Mision .texto{
+    width: 100%;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    gap: 40px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: NosotrosfadeIn 2s ease forwards;
+}
+.container-NosotrosPage .Mision .texto h3{
+    font-size: 50px;
+    font-weight: bold;
+}
+.container-NosotrosPage .Mision .texto p{
+    font-size: 20px;
+    text-align: center;
+}
+.container-NosotrosPage .Mision .imgs{
+    width: 100%;
+    overflow: hidden;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 300px 300px ;
+    overflow: hidden;
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 20px;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: NosotrosfadeIn 2s ease forwards;
+}
+
+.container-NosotrosPage .Mision .imgs img:nth-child(1) {
+    grid-column: 1/3;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.container-NosotrosPage .Mision .imgs img:nth-child(2) {
+    object-fit: cover;
+    grid-column: 1/2;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.container-NosotrosPage .Mision .imgs img:nth-child(3) {
+    object-fit: cover;
+    grid-column: 2/3;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    
+}
+.container-NosotrosPage .NuestroEquipo{
+    grid-column: 2/3;
+    grid-row: 3;
+    width: 100%;
+}
+
+
+

@@ -226,7 +226,6 @@
 
 .datos-container .datos .input input:placeholder-shown+.alert {
     opacity: 1;
-    /* Mostrar el ícono de alerta */
     animation: alerta 1s ease forwards;
 }
 

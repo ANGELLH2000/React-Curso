@@ -1,12 +1,13 @@
-.container-PedidosPage{
+.container-PedidosPage {
     padding-top: 90px;
     display: grid;
     grid-template-columns: 1fr 1400px 1fr;
     row-gap: 80px;
     margin-bottom: 100px;
-    
+
 }
-.container-PedidosPage .Indicaciones{
+
+.container-PedidosPage .Indicaciones {
     grid-row: 1;
     grid-column: 2/3;
     display: flex;
@@ -15,49 +16,71 @@
     align-items: center;
     gap: 100px;
 }
-.container-PedidosPage .Indicaciones .general{
+
+.container-PedidosPage .Indicaciones .general {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    animation: PedidofadeIn .5s forwards ease-in-out;
 }
-.container-PedidosPage .Indicaciones .general svg{
-    fill: #61D209;
+
+.container-PedidosPage .Indicaciones .general svg {
     font-size: 200px;
 }
-.container-PedidosPage .Indicaciones .general h1{
+
+.container-PedidosPage .Indicaciones .general .hola path {
+    fill: transparent;
+    /* Empieza sin color de relleno */
+    stroke: transparent;
+    /* Color inicial del trazo */
+    stroke-width: 8px;
+    animation: fillAnimation 1s forwards ease-in-out;
+    animation-delay: 0.3s;
+}
+
+.container-PedidosPage .Indicaciones .general h1 {
     font-size: 1.3rem;
     color: rgba(0, 0, 0, 0.7);
 }
-.container-PedidosPage .Indicaciones .general h2{
+
+.container-PedidosPage .Indicaciones .general h2 {
     font-size: 2.25rem;
 }
-.container-PedidosPage .Indicaciones .general p{
+
+.container-PedidosPage .Indicaciones .general p {
     font-size: 1.25rem;
 }
 
-.container-PedidosPage .Indicaciones .indicacion{
+.container-PedidosPage .Indicaciones .indicacion {
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    opacity: 0;
+    animation: IndicacionfadeIn 1s forwards ease-in-out;
+    animation-delay: 1.5s;
 }
-.container-PedidosPage .Indicaciones .indicacion h2{
+
+.container-PedidosPage .Indicaciones .indicacion h2 {
     font-size: 1.625rem;
 }
-.container-PedidosPage .Indicaciones .indicacion p{
+
+.container-PedidosPage .Indicaciones .indicacion p {
     font-size: 18px;
     margin-bottom: 10px;
 }
-.container-PedidosPage .Indicaciones .indicacion li{
+
+.container-PedidosPage .Indicaciones .indicacion li {
     font-size: 18px;
     list-style: inside;
     padding: 10px;
 }
-.container-PedidosPage .Indicaciones .indicacion button{
+
+.container-PedidosPage .Indicaciones .indicacion button {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 20px;
@@ -68,30 +91,33 @@
     cursor: pointer;
     transition: all .5s;
 }
-.container-PedidosPage .Indicaciones .indicacion button:hover{
+
+.container-PedidosPage .Indicaciones .indicacion button:hover {
     background-color: white;
     color: #B16927;
 }
 
 /* Detalles */
-.container-PedidosPage .detalles{
+.container-PedidosPage .detalles {
     grid-column: 2/3;
     grid-row: 2;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 5%;
     row-gap: 20px;
 }
-.container-PedidosPage .detalles h3{
+
+.container-PedidosPage .detalles h3 {
     font-size: 26px;
 }
+
 .container-PedidosPage .detalles h3,
 .container-PedidosPage .detalles .datos,
-.container-PedidosPage .detalles .costos{
+.container-PedidosPage .detalles .costos {
     padding: 0 10px;
 }
 
-.container-PedidosPage .detalles .datos{
+.container-PedidosPage .detalles .datos {
     grid-row: 2;
     grid-column: 1;
     width: 100%;
@@ -100,25 +126,30 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-.container-PedidosPage .detalles .datos .short-info{
+
+.container-PedidosPage .detalles .datos .short-info {
     width: 40%;
     background-color: #b16a2718;
 }
-.datos .short-info h4{
+
+.datos .short-info h4 {
     font-size: 16px;
     text-transform: uppercase;
 }
-.datos .short-info p{
+
+.datos .short-info p {
     font-size: 16px;
     color: #707070;
 }
-.container-PedidosPage .detalles .costos{
+
+.container-PedidosPage .detalles .costos {
     grid-row: 2;
     grid-column: 2;
     background-color: #EFEFEF;
-    padding: 60px ;
+    padding: 60px;
 }
-.detalles .costos .short-title{
+
+.detalles .costos .short-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -126,39 +157,81 @@
     position: relative;
     padding: 10px 0;
 }
-.detalles .costos .short-title h5{
+
+.detalles .costos .short-title h5 {
     text-transform: uppercase;
     font-size: 16px;
 }
-.detalles .costos .short-title p{
+
+.detalles .costos .short-title p {
     color: #707070;
 }
-.detalles .costos .short-title p.subtitle{
+
+.detalles .costos .short-title p.subtitle {
     color: black;
     text-transform: uppercase;
 }
-.detalles .costos .short-title::after{
+
+.detalles .costos .short-title::after {
     position: absolute;
     content: "";
-    bottom:  0;
+    bottom: 0;
     height: 1px;
     width: 100%;
     background-color: #D8D8D8;
 }
-.detalles .costos .short-costo{
+
+.detalles .costos .short-costo {
     padding: 10px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .detalles .costos .short-costo h5,
-.detalles .costos .short-costo p{
+.detalles .costos .short-costo p {
     color: #707070;
     font-size: 16px;
 }
+
 .detalles .costos hr {
     height: 1px;
-    background-color:#D8D8D8 ;
+    background-color: #D8D8D8;
     margin-top: 5px;
     margin-bottom: 20px;
+}
+
+@keyframes PedidofadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes IndicacionfadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fillAnimation {
+    0% {
+        stroke: #61D209;
+        stroke-dasharray: 1000;
+        /* Control del trazo */
+        stroke-dashoffset: 1000;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        /* Hace que el trazo aparezca */
+        fill: #61D209;
+    }
 }
