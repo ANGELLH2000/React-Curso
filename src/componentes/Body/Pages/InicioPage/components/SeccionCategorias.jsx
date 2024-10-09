@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 
 function SeccionCategorias({FireInfo}) {
     return (
-        <div className='SeccionCategorias efecto1'>
+        <div className='SeccionCategorias'>
             <div className="title">
                 <p>Categorías Populares</p>
                 <HashLink smooth to="/Tienda/Categoria/Todo#title">Ver Tienda</HashLink>

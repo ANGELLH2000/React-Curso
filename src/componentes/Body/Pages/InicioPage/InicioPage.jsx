@@ -3,6 +3,7 @@ import SeccionCategorias from './components/SeccionCategorias'
 import SeccionProducto from './components/SeccionProducto'
 import './Inicio.css'
 import { GlobalContext } from '../../../Context/Conntext'
+import Inicio from './components/Inicio'
 function InicioPage() {
     const { cambioPagina, dataCategorias, dataProductoMes } = useContext(GlobalContext)
     useEffect(() => {
@@ -10,10 +11,10 @@ function InicioPage() {
     }, [])
     return (
         <div className='grid-container'>
-            <div className="slider efecto2">
-                <img src="/banner.jpg" alt="" />
-            </div>
+            <div className="row1"></div>
+            <Inicio/>
             <SeccionCategorias FireInfo={dataCategorias} />
+            <div className="row3"></div>
             <SeccionProducto FireInfo={dataProductoMes} />
         </div>
     )
