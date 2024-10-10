@@ -179,6 +179,7 @@
 .grid-container .SeccionProducto h3 {
     text-transform: uppercase;
     user-select: none;
+    font-weight: bold;
 }
 
 .grid-container .SeccionCategorias .title {

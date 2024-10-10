@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import BotonesCart from './BotonesCart'
 import './ProductPage.css'
-function Datos({ FireData, carritoHook }) {
+function Datos({ FireData}) {
+    
     return (
         <div className="datos">
             <p className="title">{FireData.title}</p>
@@ -9,7 +10,8 @@ function Datos({ FireData, carritoHook }) {
             {!FireData.precioDscto && (<div className="price"><br /><p>S/. {FireData.precio}</p></div>)}
             <div className="reviw">5 estrellasos</div>
             <p className="description">{FireData.description}</p>
-            <BotonesCart data={FireData} carritoHook={carritoHook} />
+            <p>¿Acaso no se te antoja?</p>
+            <BotonesCart data={FireData}/>
 
             <div>
                 <p className='DatosExtras'>SKU: <span>{FireData.SKU}</span></p>

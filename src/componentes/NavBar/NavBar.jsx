@@ -41,19 +41,11 @@ function NavBar_TopBar({ openCarritoLateral, items,pagina }) {
     )
 }
 function NavBar() {
-    const [visibleCart, setVisibleCart] = useState(false)
-    const{pagina,carritoHook}=useContext(GlobalContext)
-    const { cantAndTotal } = carritoHook
-    const openCart = () => {
-        setVisibleCart(true)
-    }
-    const closeCart = () => {
-        setVisibleCart(false)
-    }
+    const{pagina,carritoHook:{cantAndTotal},navbar_tools:{visibleCart,closeCart,openCart}}=useContext(GlobalContext)
     return (
         <>
             <NavBar_TopBar openCarritoLateral={openCart} items={cantAndTotal[2]} pagina={pagina} />
-            <CarritoLateral visible={visibleCart} closeCart={closeCart} carritoHook={carritoHook} />
+            <CarritoLateral visible={visibleCart} closeCart={closeCart}  />
         </>
     )
 }

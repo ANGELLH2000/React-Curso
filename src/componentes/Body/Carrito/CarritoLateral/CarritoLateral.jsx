@@ -1,15 +1,16 @@
 import './CarritoLateral.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { IoMdClose } from "react-icons/io";
 import CartProduct from '../Componets/CartProduct';
 import { useNavigate } from 'react-router-dom';
+import { GlobalContext } from '../../../Context/Conntext';
 
-function CarritoLateral({ visible, closeCart, carritoHook }) {
+function CarritoLateral({ visible, closeCart}) {
     const [isFade, setIsFade] = useState(true);
     const [isVisible, setIsVisible] = useState(visible);
-    const navigate=useNavigate()
-    const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, cantAndTotal } = carritoHook
-    const IrCheckout = ()=>{
+    const navigate = useNavigate()
+    const { carritoHook: { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, cantAndTotal }} = useContext(GlobalContext)
+    const IrCheckout = () => {
         cerrar();
         navigate('/Checkout')
     }
@@ -64,7 +65,7 @@ function CarritoLateral({ visible, closeCart, carritoHook }) {
                             <p>Subtotal ({cantAndTotal[2]}{cantAndTotal[2] > 1 || cantAndTotal[2] === 0 ? " Unidades" : " Unidad"})</p>
                             <p>S/.{cantAndTotal[1]}</p>
                         </div>
-                        <button className='boton-bottom' onClick={IrCheckout} >Ver Carrito</button>
+                        <button className='boton-bottom' onClick={IrCheckout} >Finalizar Compra</button>
                     </div>
                 </div>
             </div>

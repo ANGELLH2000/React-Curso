@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { GlobalContext } from '../../../Context/Conntext';
 import './ProductPage.css'
 import { IoMdRemove, IoMdAdd } from "react-icons/io";
 function SinStock(){
@@ -7,9 +9,9 @@ function SinStock(){
         </div>
     )
 }
-function Stock({carritoHook,data}) {
-
-    const{ExistenciaDeProducto,AgregarProducto,AumentarCantidad,RestarCantidad}=carritoHook
+function Stock({data}) {
+    const{carritoHook:{ExistenciaDeProducto,AgregarProducto,AumentarCantidad,RestarCantidad},navbar_tools:{visibleCart,openCart}}=useContext(GlobalContext)
+    console.log("JAJAJAJ",visibleCart)
     let existeProducto=ExistenciaDeProducto(data.SKU)
     function PlusAndLess(){
         return(
@@ -22,14 +24,15 @@ function Stock({carritoHook,data}) {
     
     return (
         <div className="botones">
-            {!existeProducto[0] && <><button onClick={()=>AgregarProducto(data)}>Agregar al carrito</button></>}
-            {existeProducto[0] &&<><PlusAndLess  datas={data}/> <div className='noBotton'></div></>}
+            {!existeProducto[0] && <><button onClick={()=>AgregarProducto(data)}>¡Sí, lo quiero!</button></>}
+            {existeProducto[0] &&<><div className='noBotton'><PlusAndLess datas={data}/> </div></>}
+            {!visibleCart?<button onClick={openCart} className='Ver-Carrito'>Ver Carrito</button>:<button className='Ver-Carrito' disabled>Ver Carrito</button>}
         </div>
     )
 }
-function BotonesCart({data, carritoHook}) {
+function BotonesCart({data}) {
     if(!data.outsold){
-        return(<Stock carritoHook={carritoHook} data={data}/>)
+        return(<Stock data={data}/>)
     }else{
         return(<SinStock/>)
     }

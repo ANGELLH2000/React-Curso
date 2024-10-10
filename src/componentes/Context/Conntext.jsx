@@ -22,7 +22,16 @@ const GlobalProvider = ({ children }) => {
         AgregarProducto,
         ExistenciaDeProducto,
     }
-    
+    const [visibleCart, setVisibleCart] = useState(false)
+    const openCart = () => {
+        setVisibleCart(true)
+    }
+    const closeCart = () => {
+        setVisibleCart(false)
+    }
+    const navbar_tools ={
+        openCart,closeCart,visibleCart
+    }
     /**
      * Cambia el valor del State página del contexto
      * Se usar en el navbar para animarla la posicion de acuerdo a la página  
@@ -31,6 +40,14 @@ const GlobalProvider = ({ children }) => {
     const cambioPagina = (lugar) => {
         setPagina(lugar)
     }
+
+
+
+
+
+
+
+
     useEffect(() => {
         traerInicio()
     }, [])
@@ -46,7 +63,8 @@ const GlobalProvider = ({ children }) => {
         dataProductos,
         dataProductoMes,
         cambioPagina,
-        carritoHook
+        carritoHook,
+        navbar_tools
     }
     return (
         <GlobalContext.Provider value={ExportarContexto}>

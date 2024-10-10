@@ -10,14 +10,16 @@
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 700px 62px 480px 1fr;
-    grid-template-rows: minmax(auto, 600px) auto auto;
+    grid-template-rows:  auto auto auto;
     grid-template-areas:
         ". imagenes . datos ."
         ". . . . ."
     ;
+    align-items: start;
 }
 /*Sección de Datos   ----------------------------------------------*/
-.datos {
+.container-producto .datos {
+    padding-top: 50px;
     grid-area: datos;
     display: flex;
     flex-direction: column;
@@ -46,24 +48,45 @@
 
 .botones {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 10px;
 }
+.botones .Ver-Carrito{
+    grid-column: 2;
+    background-color: #B16927;
+    border: 1px solid #B16927;
+    color: white;
+    transition: opacity 1s ease;
+}
+.botones .Ver-Carrito:enabled{
+    opacity: 1;
+}
+
+.botones .Ver-Carrito:disabled{
+    opacity: 0;
+}
+.botones .Ver-Carrito:hover{
+    color: #B16927;
+    background-color: white;
+}
+
 .sinStock{
     color: #b93f3f;
 
 }
 .noBotton{
+    grid-column: 1;
     height: 3.125rem;
-    width: 18.75rem;
+    width: 100%;
     background-color: transparent;
     user-select: none;
 }
 .botones button {
+    grid-column: 1;
     height: 3.125rem;
-    width: 18.75rem;
+    width: 100%;
     font-size: 1rem;
     font-weight: bold;
     border: 1px solid black;
@@ -117,25 +140,32 @@
 .imagenes {
     grid-area: imagenes;
     width: 100%;
+    height: 100%;
     overflow: hidden;
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 100%;
     column-gap: 10px;
-    user-select: none;/*ELIMINIA ESTO*/
+    user-select: none;
+    align-items: center;
 }
 .secundarios{
+    grid-column: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 10px;
     overflow-y: scroll;
 }
-.principal{
+.imagenes .principal{
+    grid-column: 2;
+    height: 100%;
     display: grid;
     grid-template-rows: 96% 4%;
 }
 .principal .imgPricipal{
+    grid-row: 1;
+    height: 600px;
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
