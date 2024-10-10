@@ -19,7 +19,6 @@ function ListaProductos({ carritoHook, NombreCategoria, data, FireData }) {
                     FireData.filter(producto => producto["category"] === NombreCategoria).map((u) => (
                         <ProductCart
                             key={u.id}
-                            dataProducto={null}
                             FireProductoData={u}
                             AccionesBotones={carritoHook}
                         />

@@ -2,6 +2,7 @@ import scrAlt from '../../../../assets/img-cart.png';
 import { IoMdRemove, IoMdAdd } from "react-icons/io";
 import './ComponetsCart.css'
 import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 
 function BotonCart3() {//Agotado
     return (
@@ -59,10 +60,20 @@ function PrecioCart({ precio, precioDcto }) {
         </div>
     )
 }
-function ImagenCart({ src, alt, SKU }) {
+function ImagenCart({ src, alt, SKU, setImgLoading }) {
+    const imgRef=useRef()
+    const carga_completa_img = () => {
+        console.log("Ya cargue")
+        setImgLoading(false)
+    }
+    useEffect(()=>{
+        if(imgRef.current && imgRef.current.complete){
+            carga_completa_img()
+        }
+    },[])
     return (
         <Link to={`/Tienda/Producto/${SKU}`} className='ImagenCart'>
-            <img loading='lazy' src={src ? src : src = scrAlt} alt={alt} />
+            <img loading='lazy' src={src} alt={alt} onLoad={carga_completa_img} ref={imgRef} />
         </Link>
     )
 }
