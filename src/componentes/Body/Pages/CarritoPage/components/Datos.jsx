@@ -5,10 +5,11 @@ import { GlobalContext } from '../../../../Context/Conntext';
 
 function Datos({ total }) {
     const navigate = useNavigate()
-    const{setPedidoLoading}=useContext(GlobalContext)
+    const{setPedidoLoading,carritoHook:{ActualizarLocalStorage}}=useContext(GlobalContext)
     function crearPedido() {
         setPedidoLoading(true)
         const timer= setTimeout(()=>{
+            ActualizarLocalStorage([])
             setPedidoLoading(false)
             navigate("/Pedido/1223")
         },2000)

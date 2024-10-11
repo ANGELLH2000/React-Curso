@@ -10,7 +10,7 @@ const GlobalProvider = ({ children }) => {
 
     const [pagina, setPagina] = useState("Inicio");
     const { traerInicio, fireLoading, dataCategorias, dataProductos, dataProductoMes } = useFireBase()
-    const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto, cantAndTotal } = useCarrito()
+    const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto,ActualizarLocalStorage, cantAndTotal } = useCarrito()
     const carritoHook = {
         carrito,
         cantAndTotal,
@@ -20,6 +20,7 @@ const GlobalProvider = ({ children }) => {
         RestarCantidad,
         AgregarProducto,
         ExistenciaDeProducto,
+        ActualizarLocalStorage
     }
 
     const [visibleCart, setVisibleCart] = useState(false)

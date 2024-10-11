@@ -136,7 +136,7 @@ function useCarrito() {
     }, [])
 
 
-    return { carrito, cantAndTotal, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto }
+    return { carrito, cantAndTotal, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto,ActualizarLocalStorage}
 }
 
 
