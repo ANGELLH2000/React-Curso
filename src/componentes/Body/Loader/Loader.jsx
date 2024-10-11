@@ -1,11 +1,11 @@
 import './Loader.css'
-function Loader() {
+function Loader({texto="Cargando"}) {
     return (
         <div className='load'>
 
             <svg className="container"><rect className="boxes"></rect></svg>
 
-            <p>Cargando...</p>
+            <p>{texto}...</p>
         </div>
     )
 }

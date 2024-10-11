@@ -9,7 +9,6 @@ export const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
 
     const [pagina, setPagina] = useState("Inicio");
-    const [categoriasTitulosInfo, setCategoriasTitulosInfo] = useState([]);
     const { traerInicio, fireLoading, dataCategorias, dataProductos, dataProductoMes } = useFireBase()
     const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto, cantAndTotal } = useCarrito()
     const carritoHook = {
@@ -22,7 +21,10 @@ const GlobalProvider = ({ children }) => {
         AgregarProducto,
         ExistenciaDeProducto,
     }
+
     const [visibleCart, setVisibleCart] = useState(false)
+    const [pedidoLoading, setPedidoLoading] = useState(false)
+
     const openCart = () => {
         setVisibleCart(true)
     }
@@ -42,12 +44,6 @@ const GlobalProvider = ({ children }) => {
     }
 
 
-
-
-
-
-
-
     useEffect(() => {
         traerInicio()
     }, [])
@@ -64,7 +60,9 @@ const GlobalProvider = ({ children }) => {
         dataProductoMes,
         cambioPagina,
         carritoHook,
-        navbar_tools
+        navbar_tools,
+        pedidoLoading,
+        setPedidoLoading
     }
     return (
         <GlobalContext.Provider value={ExportarContexto}>

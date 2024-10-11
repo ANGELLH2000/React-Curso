@@ -2,8 +2,9 @@
     padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr repeat(2, 700px) 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto ;
     row-gap: 60px;
+    margin-bottom: 100px;
 }
 
 .container-CarritoPage h1 {
@@ -12,8 +13,9 @@
     grid-row: 1;
     text-align: center;
 }
+
 /* Redireccion */
-.container-redireccion{
+.container-redireccion {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -21,31 +23,38 @@
     justify-content: center;
     align-items: center;
 }
-.container-redireccion h2{
-    font-size:35px ;
+
+.container-redireccion h2 {
+    font-size: 35px;
     margin-bottom: 60px;
 }
-.container-redireccion svg{
-    font-size:60px ;
+
+.container-redireccion svg {
+    font-size: 60px;
     margin-bottom: 20px;
     animation: carita 2s ease-in-out infinite;
 }
-.container-redireccion h3{
-    font-size:30px ;
+
+.container-redireccion h3 {
+    font-size: 30px;
     margin-bottom: 20px;
 }
-.container-redireccion p{
-    font-size:23px ;
+
+.container-redireccion p {
+    font-size: 23px;
     margin-bottom: 20px;
 }
-.container-redireccion h4{
-    font-size:23px ;
+
+.container-redireccion h4 {
+    font-size: 23px;
 }
-.container-redireccion a{
-    font-size:20px;
+
+.container-redireccion a {
+    font-size: 20px;
     color: #B16927;
     text-decoration: underline;
 }
+
 /* Items Container*/
 
 .container-CarritoPage .items-container {
@@ -74,9 +83,11 @@
     align-items: flex-start;
 
 }
-.items-container .item .data a{
+
+.items-container .item .data a {
     user-select: none;
 }
+
 .items-container .item .data img {
     grid-column: 1/2;
     grid-row: 1;
@@ -144,14 +155,15 @@
     background-color: rgba(112, 112, 112, 0.15);
 }
 
-.items-container .item .close-item{
+.items-container .item .close-item {
     cursor: pointer;
     box-sizing: content-box;
     padding: 3px;
     border-radius: 4px;
     transition: all .4s;
 }
-.items-container .item .close-item:hover{
+
+.items-container .item .close-item:hover {
     fill: #B16927;
     background-color: rgb(248, 232, 210);
 }
@@ -161,38 +173,68 @@
     grid-column: 3/4;
     display: flex;
     justify-content: center;
+    height: fit-content;
 }
 
 .datos-container .datos {
     background-color: #EFEFEF;
     width: 80%;
-    align-items: center;
-    padding: 70px 60px;
+    padding: 70px 0px;
+    text-align: center;
+    border-radius: 8px;
 }
 
 .datos-container .datos h2 {
     font-size: 26px;
     user-select: none;
-    margin-bottom: 40px;
+    text-align: center;
 }
-
-.datos-container .datos .input {
+.datos-container .datos .form2{
+    border-bottom: 1px solid #D8D8D8;
+    border-top: 1px solid #D8D8D8;
+}
+.datos-container .datos .form1,
+.datos-container .datos .form2,
+.datos-container .datos .form3 {
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 60px 60px;
+    
+}
+
+
+
+.datos-container .datos .form1 .input,
+.datos-container .datos .form2 .input,
+.datos-container .datos .form3 .input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 85%;
     user-select: none;
     position: relative;
-    margin-bottom: 20px;
 }
 
-.datos-container .datos .input label {
+.datos-container .datos .form1 .input label,
+.datos-container .datos .form2 .input label,
+.datos-container .datos .form3 .input label,
+.datos-container .datos .form2 .checks .check label{
     color: #707070;
+    align-self: start;
     font-size: 1rem;
     user-select: none;
-    margin-bottom: 8px;
+}
+.datos-container .datos .form2 .checks .check label{
+    color: black;
 }
 
-.datos-container .datos .input .alert {
+.datos-container .datos .form1 .input .alert,
+.datos-container .datos .form2 .input .alert,
+.datos-container .datos .form3 .input .alert{
     stroke: #e74514;
     fill: #e74514;
     position: absolute;
@@ -202,21 +244,56 @@
     opacity: 0;
 }
 
-.datos-container .datos .input input {
+.datos-container .datos .form1 .input input,
+.datos-container .datos .form2 .input input,
+.datos-container .datos .form3 .input input {
+    background-color: #B16927;
+    width: 100%;
     font-size: 1rem;
     outline: none;
-    padding: 5px 10px;
+    padding: 10px 10px 3px 10px ;
     text-align: center;
     background-color: transparent;
 }
+.datos-container .datos .form2 .checks{
+    width: 85%;
+    padding: 5px 0px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 15px;
 
-.datos-container .datos .input::after {
+}
+.datos-container .datos .form2 .checks h5{
+    grid-column: 1;
+    color: #707070;
+    font-size: 1rem;
+    user-select: none;
+    text-align: left;
+}
+.datos-container .datos .form2 .checks .check,
+.datos-container .datos .form3 .check{
+    grid-row: 2;
+    display: flex;
+    font-size: 1rem;
+    gap: 10px;
+}
+.datos-container .datos .form3 .check{
+    padding-top: 30px;
+    color: black;
+    width: 85%;
+}
+.datos-container .datos .form1 .input::after,
+.datos-container .datos .form2 .input::after,
+.datos-container .datos .form3 .input::after {
     content: "";
+    width: 100%;
     height: 1px;
     background-color: #c0c0c0;
 }
 
-.datos-container .datos .input input::placeholder {
+.datos-container .datos .form1 .input input::placeholder,
+.datos-container .datos .form2 .input input::placeholder,
+.datos-container .datos .form3 .input input::placeholder {
     font-size: 15px;
 }
 
@@ -252,22 +329,23 @@
         /* Termina en 100% de ancho */
     }
 }
+
 @keyframes carita {
-    0%{
+    0% {
         transform: rotate(-20deg);
     }
-    
-    50%{
+
+    50% {
         transform: rotate(20deg);
     }
-    100%{
+
+    100% {
         transform: rotate(-20deg);
     }
 }
 
 .datos-container .datos .total {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding: 0px 10% 30px 10%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -279,11 +357,11 @@
 }
 
 .datos-container .datos button {
-    width: 100%;
+    width: 90%;
     color: white;
     background-color: #B16927;
     border: 1px solid #B16927;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
