@@ -65,7 +65,7 @@ function Datos({ total }) {
 
                 <div className="input">
                     <label htmlFor="phone">Método de pago:</label>
-                    <input type="tel" size="9" id='phone' defaultValue="Link de pago enviado por WhatsApp." style={{'userSelect':'none'}}/>
+                    <input type="text" size="9" id='phone' value="Link de pago enviado por WhatsApp." readOnly style={{'userSelect':'none'}}/>
                 </div>
 
                 <div className="check">
