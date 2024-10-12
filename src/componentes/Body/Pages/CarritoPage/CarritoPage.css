@@ -2,7 +2,7 @@
     padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr repeat(2, 700px) 1fr;
-    grid-template-rows: auto ;
+    grid-template-rows: auto;
     row-gap: 60px;
     margin-bottom: 100px;
 }
@@ -59,10 +59,16 @@
 
 .container-CarritoPage .items-container {
     grid-column: 2/3;
+    position: -webkit-sticky;
+    /* Soporte para navegadores antiguos */
+    position: sticky;
+    top: 100px;
+    align-self: start;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    position: sticky;
 }
 
 .items-container .item {
@@ -180,8 +186,12 @@
     background-color: #EFEFEF;
     width: 80%;
     padding: 70px 0px;
-    text-align: center;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .datos-container .datos h2 {
@@ -189,146 +199,30 @@
     user-select: none;
     text-align: center;
 }
-.datos-container .datos .form2{
-    border-bottom: 1px solid #D8D8D8;
-    border-top: 1px solid #D8D8D8;
-}
-.datos-container .datos .form1,
-.datos-container .datos .form2,
-.datos-container .datos .form3 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 60px 60px;
-    
-}
 
-
-
-.datos-container .datos .form1 .input,
-.datos-container .datos .form2 .input,
-.datos-container .datos .form3 .input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 85%;
-    user-select: none;
-    position: relative;
-}
-
-.datos-container .datos .form1 .input label,
-.datos-container .datos .form2 .input label,
-.datos-container .datos .form3 .input label,
-.datos-container .datos .form2 .checks .check label{
-    color: #707070;
-    align-self: start;
-    font-size: 1rem;
-    user-select: none;
-}
-.datos-container .datos .form2 .checks .check label{
-    color: black;
-}
-
-.datos-container .datos .form1 .input .alert,
-.datos-container .datos .form2 .input .alert,
-.datos-container .datos .form3 .input .alert{
-    stroke: #e74514;
-    fill: #e74514;
-    position: absolute;
-    bottom: 8px;
-    right: 30px;
-    scale: 1.2;
-    opacity: 0;
-}
-
-.datos-container .datos .form1 .input input,
-.datos-container .datos .form2 .input input,
-.datos-container .datos .form3 .input input {
-    background-color: #B16927;
+.datos-container .datos form {
     width: 100%;
-    font-size: 1rem;
-    outline: none;
-    padding: 10px 10px 3px 10px ;
-    text-align: center;
-    background-color: transparent;
-}
-.datos-container .datos .form2 .checks{
-    width: 85%;
-    padding: 5px 0px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    row-gap: 15px;
-
-}
-.datos-container .datos .form2 .checks h5{
-    grid-column: 1;
-    color: #707070;
-    font-size: 1rem;
-    user-select: none;
-    text-align: left;
-}
-.datos-container .datos .form2 .checks .check,
-.datos-container .datos .form3 .check{
-    grid-row: 2;
-    display: flex;
-    font-size: 1rem;
-    gap: 10px;
-}
-.datos-container .datos .form3 .check{
-    padding-top: 30px;
-    color: black;
-    width: 85%;
-}
-.datos-container .datos .form1 .input::after,
-.datos-container .datos .form2 .input::after,
-.datos-container .datos .form3 .input::after {
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: #c0c0c0;
-}
-
-.datos-container .datos .form1 .input input::placeholder,
-.datos-container .datos .form2 .input input::placeholder,
-.datos-container .datos .form3 .input input::placeholder {
-    font-size: 15px;
-}
-
-.datos-container .datos .input input:placeholder-shown {
-    animation: alerta 1s ease forwards;
-}
-
-.datos-container .datos .input input:placeholder-shown+.alert {
-    opacity: 1;
-    animation: alerta 1s ease forwards;
-}
-
-.datos-container .datos .datos-errones {
-    color: red;
-    user-select: none;
-    animation: alerta 1s ease forwards;
-}
 
 
-
-@keyframes alerta {
-    0% {
-        transform: translateY(0px);
-        /* Inicia en 0% de ancho */
+    & .part1,
+    .part2,
+    .part3 {
+        padding: 5% 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
-    50% {
-        transform: translateY(-8px);
-    }
-
-    100% {
-        transform: translateY(0px);
-        /* Termina en 100% de ancho */
+    & .part2 {
+        border-top: 1px solid #D8D8D8;
+        border-bottom: 1px solid #D8D8D8;
     }
 }
+
+
+
+
 
 @keyframes carita {
     0% {
@@ -365,4 +259,207 @@
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+}
+
+/*Input Component*/
+.input-component-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    animation: aparicion_simple 1s ease forwards;
+
+    & label {
+        font-size: 1rem;
+        color: #707070;
+        align-self: self-start;
+    }
+
+    & input {
+        font-size: 16px;
+        background-color: transparent;
+        border-bottom: 1px solid #D8D8D8;
+        text-align: center;
+        outline: none;
+        padding: 5px 3px 3px 3px;
+    }
+
+    & .error {
+        background-color: hwb(11 87% 0%);
+        width: fit-content;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        gap: .3125rem;
+        font-size: 13px;
+        padding: 1px 4px;
+        margin-top: 5px;
+        border-radius: 8px;
+        animation: error_label 1s ease-out forwards;
+
+        & p {
+            font-size: 13px;
+            color: #D82700;
+            text-align: center;
+        }
+
+        & svg {
+            stroke: #D82700;
+            fill: #D82700;
+        }
+    }
+
+    & .disable {
+        font-size: 13px;
+        padding: 1px 4px;
+        margin-top: 5px;
+
+        & p {
+            color: transparent;
+        }
+    }
+}
+
+.input-component-radio {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 20px;
+    user-select: none;
+
+    & p {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 1rem;
+        color: #707070;
+        justify-self: self-start;
+        align-self: center;
+    }
+
+    & .error-entrega {
+        grid-column: 1/-1;
+        grid-row: 1;
+        background-color: hwb(11 87% 0%);
+        width: fit-content;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        gap: .3125rem;
+        font-size: 13px;
+        padding: 1px 4px;
+        border-radius: 8px;
+        margin-left: 100px;
+        animation: error_label 1s ease-out forwards;
+
+        & p {
+            font-size: 13px;
+            color: #D82700;
+            text-align: center;
+        }
+
+        & svg {
+            stroke: #D82700;
+            fill: #D82700;
+        }
+    }
+
+    & .check {
+        grid-row: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    & :last-child {
+        grid-row: 3;
+        grid-column: 1/-1;
+    }
+
+    & div.Direccion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        animation: aparicion_simple 1s ease forwards;
+
+        & h5 {
+            text-transform: uppercase;
+            font-size: .8rem;
+            color: #707070;
+        }
+
+        & p {
+            font-size: 1.2rem;
+            color: black;
+        }
+    }
+}
+
+.input-component-checkbox {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    user-select: none;
+}
+
+.part3 .error-terminos {
+    background-color: hwb(11 87% 0%);
+    width: fit-content;
+    display: flex;
+    align-self: self-start;
+    align-items: center;
+    justify-content: center;
+    gap: .3125rem;
+    font-size: 13px;
+    padding: 1px 4px;
+    border-radius: 8px;
+    animation: error_label 1s ease-out forwards;
+
+    & p {
+        font-size: 13px;
+        color: #D82700;
+        text-align: center;
+    }
+
+    & svg {
+        stroke: #D82700;
+        fill: #D82700;
+    }
+
+}
+
+@keyframes aparicion_simple {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes error_label {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    60% {
+        transform: translateY(0px);
+    }
+
+    80% {
+        transform: translateY(1px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

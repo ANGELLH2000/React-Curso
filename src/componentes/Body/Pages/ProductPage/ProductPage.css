@@ -53,17 +53,27 @@
     align-items: center;
     gap: 10px;
 }
-.botones .Ver-Carrito{
+
+.botones .Ver-Carrito,
+.botones button.agregar{
+    height: 3.125rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    user-select: none;
+    border-radius: 4px;
+    cursor: pointer;
     grid-column: 2;
-    background-color: #B16927;
+    grid-row: 1;
+    background-color: white;
     border: 1px solid #B16927;
-    color: white;
+    color: #B16927;
     transition: opacity 1s ease;
 }
-.botones .Ver-Carrito:enabled{
-    opacity: 1;
+.botones .Ver-Carrito.pricipal{
+    background-color: #B16927;
+    color: white;
 }
-
 .botones .Ver-Carrito:disabled{
     opacity: 0;
 }
@@ -83,26 +93,16 @@
     background-color: transparent;
     user-select: none;
 }
-.botones button {
+.botones button.agregar {
     grid-column: 1;
-    height: 3.125rem;
-    width: 100%;
-    font-size: 1rem;
-    font-weight: bold;
-    border: 1px solid black;
-    background-color: transparent;
-    border-radius: 4px;
-    user-select: none;
-    cursor: pointer;
-}
-.botones button:hover{
     border: 1px solid #B16927;
-    color: #B16927;
-}
-.botones button:active{
-    color: #EFEFEF;
-    border: 1px solid #B16927;
+    color: white;
     background-color: #B16927;
+    transition: all .6s ease;
+}
+.botones button.agregar:hover{
+    background-color: white;
+    color: #B16927;
 }
 .botones .operadores {
     height: 100%;

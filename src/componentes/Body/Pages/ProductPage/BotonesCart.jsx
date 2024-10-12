@@ -24,9 +24,9 @@ function Stock({data}) {
     
     return (
         <div className="botones">
-            {!existeProducto[0] && <><button onClick={()=>AgregarProducto(data)}>¡Sí, lo quiero!</button></>}
+            {!existeProducto[0] && <><button className='agregar' onClick={()=>AgregarProducto(data)}>¡Sí, lo quiero!</button></>}
             {existeProducto[0] &&<><div className='noBotton'><PlusAndLess datas={data}/> </div></>}
-            {!visibleCart?<button onClick={openCart} className='Ver-Carrito'>Ver Carrito</button>:<button className='Ver-Carrito' disabled>Ver Carrito</button>}
+            {<button className={`Ver-Carrito ${existeProducto[0]? 'pricipal':''}`} onClick={openCart} disabled={visibleCart}>Ver Carrito</button>}
         </div>
     )
 }

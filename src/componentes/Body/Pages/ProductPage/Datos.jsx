@@ -10,6 +10,7 @@ function Datos({ FireData}) {
             {!FireData.precioDscto && (<div className="price"><br /><p>S/. {FireData.precio}</p></div>)}
             <div className="reviw">5 estrellasos</div>
             <p className="description">{FireData.description}</p>
+            <br />
             <p>¿Acaso no se te antoja?</p>
             <BotonesCart data={FireData}/>
 
