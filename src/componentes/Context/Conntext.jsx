@@ -9,8 +9,8 @@ export const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
 
     const [pagina, setPagina] = useState("Inicio");
-    const { traerInicio, fireLoading, dataCategorias, dataProductos, dataProductoMes } = useFireBase()
-    const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto,ActualizarLocalStorage, cantAndTotal } = useCarrito()
+    const { traerInicio, fireLoading, dataCategorias, dataProductos, dataPedido, dataProductoMes, firePedidoLoading, traerPedido, Crear_Pedido } = useFireBase()
+    const { carrito, traerCarritoAlState, EliminarProducto, AumentarCantidad, RestarCantidad, AgregarProducto, ExistenciaDeProducto, ActualizarLocalStorage, cantAndTotal } = useCarrito()
     const carritoHook = {
         carrito,
         cantAndTotal,
@@ -24,7 +24,6 @@ const GlobalProvider = ({ children }) => {
     }
 
     const [visibleCart, setVisibleCart] = useState(false)
-    const [pedidoLoading, setPedidoLoading] = useState(false)
 
     const openCart = () => {
         setVisibleCart(true)
@@ -32,8 +31,8 @@ const GlobalProvider = ({ children }) => {
     const closeCart = () => {
         setVisibleCart(false)
     }
-    const navbar_tools ={
-        openCart,closeCart,visibleCart
+    const navbar_tools = {
+        openCart, closeCart, visibleCart
     }
     /**
      * Cambia el valor del State página del contexto
@@ -53,17 +52,20 @@ const GlobalProvider = ({ children }) => {
     if (fireLoading) {
         return (<Loader />)
     }
-    
+
     const ExportarContexto = {
         pagina,
         dataCategorias,
         dataProductos,
         dataProductoMes,
-        cambioPagina,
+        dataPedido,
         carritoHook,
         navbar_tools,
-        pedidoLoading,
-        setPedidoLoading
+        firePedidoLoading,
+        fireLoading,
+        cambioPagina,
+        traerPedido,
+        Crear_Pedido
     }
     return (
         <GlobalContext.Provider value={ExportarContexto}>

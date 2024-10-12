@@ -20,7 +20,7 @@ function App() {
           <Route path='/Tienda/Producto/:SKU' element={<ProductPage />} />
           <Route path='/Nosotros' element={<NosotrosPage />} />
           <Route path='/Checkout' element={<CarritoPage/>} />
-          <Route path='/Pedido/:IdColeccion' element={<PedidoPage/>} />
+          <Route path='/Pedido/:IdPedido' element={<PedidoPage/>} />
           <Route path='*' element={<><br /><br /><br /><br /><br /><br /><br /><h1>Error</h1></>} />
         </Routes>
       </GlobalProvider>

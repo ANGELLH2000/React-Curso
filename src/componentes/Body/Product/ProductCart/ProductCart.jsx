@@ -3,7 +3,6 @@ import { EtiquetaCart, ImagenCart, PrecioCart, BotonCart } from '../ComponetsCar
 import './ProductCart.css'
 function ProductCart({ AccionesBotones, FireProductoData }) {
     const [imgLoading, setImgLoading] = useState(true)
-    console.log("Me renderizo", imgLoading)
     if (FireProductoData === null) {
         <div>Cargando</div>
     }

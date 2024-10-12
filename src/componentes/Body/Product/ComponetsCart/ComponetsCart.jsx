@@ -63,7 +63,7 @@ function PrecioCart({ precio, precioDcto }) {
 function ImagenCart({ src, alt, SKU, setImgLoading }) {
     const imgRef=useRef()
     const carga_completa_img = () => {
-        console.log("Ya cargue")
+        //console.log("Ya cargue")
         setImgLoading(false)
     }
     useEffect(()=>{

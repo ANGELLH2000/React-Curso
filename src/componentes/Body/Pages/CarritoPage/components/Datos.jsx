@@ -3,6 +3,7 @@ import { IoAlertCircleOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import { GlobalContext } from '../../../../Context/Conntext';
 import { useForm } from 'react-hook-form';
+import useFireBase from '../../../../Hooks/useFireBase';
 
 ////////////////          Componentes Inputs      /////////////////////////////////////////////////
 function Input_text({ Label, PlaceHolder, Type = "text", Name, Value, Hook, errors, MsjErrors }) {
@@ -61,10 +62,10 @@ function Input_checkbox({ Label, Hook, errors, MsjErrors, watch }) {
         </div>
     )
 }
-function Input_Terminos_Condiciones({Hook, MsjErrors}) {
+function Input_Terminos_Condiciones({ Hook, MsjErrors }) {
     return (
         <div className="input-component-checkbox">
-            <input type="checkbox" id="Terminos" name="Terminos" defaultValue={true} {...Hook("Terminos",MsjErrors)} />
+            <input type="checkbox" id="Terminos" name="Terminos" defaultValue={true} {...Hook("Terminos", MsjErrors)} />
             <label htmlFor="Terminos">Acepto Términos de uso o privacidad</label>
         </div>
     )
@@ -74,20 +75,22 @@ function Input_Terminos_Condiciones({Hook, MsjErrors}) {
 
 function Datos({ total }) {
     const navigate = useNavigate()
-    const{setPedidoLoading,carritoHook:{ActualizarLocalStorage}}=useContext(GlobalContext)
-    const { register, handleSubmit, formState: { errors }, watch } = useForm()
-    const onSubmit = handleSubmit((data) => {
-        console.log("la data", data)
-        setPedidoLoading(true)
-        const timer= setTimeout(()=>{
-            ActualizarLocalStorage([])
-            setPedidoLoading(false)
-            navigate("/Pedido/1223")
-        },2000)
-        return () => clearTimeout(timer);
-        
-    })
 
+    const { carritoHook: { ActualizarLocalStorage, carrito, cantAndTotal }, Crear_Pedido } = useContext(GlobalContext)
+    const { register, handleSubmit, formState: { errors }, watch } = useForm()
+    const Prueba = handleSubmit((data) => {
+        Crear_Pedido([carrito, cantAndTotal, data]).then((resp)=>{
+            if(resp==0){
+                console.log("Hubo un error en la creacion del pedido.")
+                navigate('/Error')//Mejorar esto
+            }else{
+                ActualizarLocalStorage([])
+                navigate(`/Pedido/${resp}`)
+            }
+        })
+
+
+    })
 
     return (
         <div className='datos'>
@@ -154,11 +157,11 @@ function Datos({ total }) {
                     <Input_Terminos_Condiciones Hook={register}
                         MsjErrors={{ required: { value: true, message: "Debes aceptar los términos y condiciones." } }}
                     />
-                    {errors.Terminos && 
-                    <div className="error-terminos">
-                        <IoAlertCircleOutline />
-                        <p>{errors.Terminos.message}</p>
-                    </div>
+                    {errors.Terminos &&
+                        <div className="error-terminos">
+                            <IoAlertCircleOutline />
+                            <p>{errors.Terminos.message}</p>
+                        </div>
                     }
                 </div>
             </form>
@@ -166,7 +169,7 @@ function Datos({ total }) {
                 <p>Total</p>
                 <p>S/. {total}</p>
             </div>
-            <button onClick={() => onSubmit()}>
+            <button onClick={() => Prueba()}>
                 Crear Pedido
             </button>
         </div>

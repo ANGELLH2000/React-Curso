@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import './CarritoPage.css'
 import Datos from './components/Datos'
 import Items from './components/Items'
@@ -7,7 +7,7 @@ import Redireccion from './components/Redireccion'
 import Loader from '../../Loader/Loader'
 
 export default function CarritoPage() {
-    const { carritoHook ,pedidoLoading} = useContext(GlobalContext)
+    const { carritoHook ,firePedidoLoading} = useContext(GlobalContext)
     const { carrito, cantAndTotal } = carritoHook
     if (cantAndTotal[0] === 0) {
         return (
@@ -16,7 +16,7 @@ export default function CarritoPage() {
             </div>
         )
     }
-    if(pedidoLoading){
+    if(firePedidoLoading){
         return (
             <Loader texto="Creando Pedido"/>
         )
