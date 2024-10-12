@@ -73,14 +73,19 @@ function Input_Terminos_Condiciones({Hook, MsjErrors}) {
 
 
 function Datos({ total }) {
-
+    const navigate = useNavigate()
+    const{setPedidoLoading,carritoHook:{ActualizarLocalStorage}}=useContext(GlobalContext)
     const { register, handleSubmit, formState: { errors }, watch } = useForm()
-    console.log("Erros", errors)
-
-
-
     const onSubmit = handleSubmit((data) => {
         console.log("la data", data)
+        setPedidoLoading(true)
+        const timer= setTimeout(()=>{
+            ActualizarLocalStorage([])
+            setPedidoLoading(false)
+            navigate("/Pedido/1223")
+        },2000)
+        return () => clearTimeout(timer);
+        
     })
 
 
