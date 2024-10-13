@@ -9,22 +9,40 @@ import Loader from '../../Loader/Loader';
 
 function PedidoPage() {
     const { IdPedido } = useParams();
-    const { traerPedido, dataPedido, pagePedidoLoading} = useContext(GlobalContext)
-    const [resp,setResp]=useState(false)
+    const { traerPedido, dataPedido, pagePedidoLoading } = useContext(GlobalContext)
+    const [resp, setResp] = useState(false)
 
     useEffect(() => {
-        traerPedido(IdPedido).then((u)=>{
+        traerPedido(IdPedido).then((u) => {
             setResp(u)
         })
     }, [IdPedido])
 
 
-
-    if (resp===false) {
+    if (resp === false) {
         return <Loader texto='Buscando pedido' />
-    } else{
-        if(dataPedido.Existencia){
-           // console.log("Si existe",dataPedido)
+    } else {
+        if (dataPedido.Existencia) {
+            // console.log("Si existe",dataPedido)
+            
+            ///// Funcion para el boton de Whatsapp
+            function enviarWhatsApp() {
+                // Número de teléfono de la tienda (en formato internacional, sin + ni espacios)
+                const telefono = "51963060125";
+
+                // Mensaje predeterminado con el número de pedido
+                const mensaje1 = `Hola TartaDulce, hice un pedido y quisiera saber más sobre él. Mi número de pedido es: ${dataPedido.IdPedido}`;
+                const mensaje  =`Video de Tiktok:\nhttps://vm.tiktok.com/ZMhDKTpr5/`;
+                // Reemplazamos los espacios en blanco por %20 para que sea compatible con la URL
+                const mensajeCodificado = encodeURIComponent(mensaje);
+
+                // URL para abrir WhatsApp con el mensaje
+                const url = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
+
+                // Abrir una nueva pestaña con la URL generada
+                window.open(url, '_blank');
+            }
+            /////
             return (
                 <div className='container-PedidosPage'>
                     <div className="Indicaciones">
@@ -42,7 +60,7 @@ function PedidoPage() {
                                 <li><p>Detalles de la entrega:</p> Si seleccionaste <p>Delivery</p>, te confirmaremos el monto total y te pediremos que nos envíes tu ubicación en tiempo real para asegurar una entrega precisa.</li>
                             </ul>
                             <p>Solo relájate y espera nuestro mensaje. ¡Nosotros nos encargamos del resto! <br />Si tienes alguna duda o necesitas ayuda, no dudes en contactarnos directamente al 987 654 321.</p>
-                            <button>Enviar mensaje por WhatsApp</button>
+                            <button onClick={()=>enviarWhatsApp()}>Enviar mensaje por WhatsApp</button>
                         </div>
                     </div>
                     <div className="detalles">
@@ -53,9 +71,9 @@ function PedidoPage() {
                     </div>
                 </div>
             )
-        }else{
+        } else {
             //console.log("No existe")
-            return <Navigate to={'/Error'}/>
+            return <Navigate to={'/Error'} />
         }
     }
 
