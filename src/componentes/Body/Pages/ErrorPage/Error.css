@@ -1,0 +1,18 @@
+.container-error{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.container-error h1{
+    font-size: 2.5rem;
+}
+.container-error a{
+    background-color: bisque;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+}

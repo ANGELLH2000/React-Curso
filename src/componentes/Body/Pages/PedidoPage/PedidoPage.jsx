@@ -31,8 +31,7 @@ function PedidoPage() {
                 const telefono = "51963060125";
 
                 // Mensaje predeterminado con el número de pedido
-                const mensaje1 = `Hola TartaDulce,\nRealizé un pedido y quisiera saber más sobre él.\nMi número de pedido es: ${dataPedido.IdPedido}`;
-                const mensaje  =`Video de Tiktok:\nhttps://vm.tiktok.com/ZMhDKTpr5/`;
+                const mensaje = `Hola TartaDulce,\nRealizé un pedido y quisiera saber más sobre él.\nMi número de pedido es: ${dataPedido.IdPedido}`;
                 // Reemplazamos los espacios en blanco por %20 para que sea compatible con la URL
                 const mensajeCodificado = encodeURIComponent(mensaje);
 
