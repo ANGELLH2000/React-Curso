@@ -14,10 +14,10 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE,
   authDomain: "coder-react-8d755.firebaseapp.com",
-  projectId: "coder-react-8d755",
+  projectId: import.meta.env.VITE_PROYECTID,
   storageBucket: "coder-react-8d755.appspot.com",
   messagingSenderId: "977114759589",
-  appId: "1:977114759589:web:2e776c8b784636d11e284c",
+  appId:import.meta.env.VITE_APIID,
   measurementId: "G-B16L7M97T6"
 };
 
