@@ -20,7 +20,7 @@ function CarritoLateral({ visible, closeCart}) {
     useEffect(() => {
         if (!isFade) {
             const timeout = setTimeout(() => {
-                console.log("Se Destruye el componente  despues de 1s")
+                //console.log("Se Destruye el componente  despues de 1s")
                 setIsFade(true)
                 closeCart()
             }, 500);
