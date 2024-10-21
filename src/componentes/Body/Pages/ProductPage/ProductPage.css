@@ -9,14 +9,35 @@
     width: 100%;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 700px 62px 480px 1fr;
-    grid-template-rows:  auto auto auto;
+    grid-template-columns: 1fr 700px 480px 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-        ". imagenes . datos ."
-        ". . . . ."
+        ". imagenes  datos ."
+        ". .  . ."
     ;
     align-items: start;
+    column-gap: 60px;
 }
+
+
+@media screen and (width<1300px) {
+    .container-producto {
+        padding-top: 15vh;
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr minmax(auto,1000px) 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            ". imagenes ."
+            ". datos ."
+            ". . ."
+        ;
+        align-items: start;
+        column-gap: 60px;
+    }
+}
+
 /*Sección de Datos   ----------------------------------------------*/
 .container-producto .datos {
     padding-top: 50px;
@@ -24,8 +45,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
+
 }
+
 .datos .title {
     font-size: 1.625rem;
     color: black;
@@ -34,8 +56,9 @@
 .datos .price {
     font-size: 1.25rem;
     color: #B16927;
-} 
-.datos .price .Dscto{
+}
+
+.datos .price .Dscto {
     font-size: 1rem;
     color: #B4A186;
     text-decoration: line-through;
@@ -55,7 +78,7 @@
 }
 
 .botones .Ver-Carrito,
-.botones button.agregar{
+.botones button.agregar {
     height: 3.125rem;
     width: 100%;
     font-size: 1rem;
@@ -70,29 +93,34 @@
     color: #B16927;
     transition: opacity 1s ease;
 }
-.botones .Ver-Carrito.pricipal{
+
+.botones .Ver-Carrito.pricipal {
     background-color: #B16927;
     color: white;
 }
-.botones .Ver-Carrito:disabled{
+
+.botones .Ver-Carrito:disabled {
     opacity: 0;
 }
-.botones .Ver-Carrito:hover{
+
+.botones .Ver-Carrito:hover {
     color: #B16927;
     background-color: white;
 }
 
-.sinStock{
+.sinStock {
     color: #b93f3f;
 
 }
-.noBotton{
+
+.noBotton {
     grid-column: 1;
     height: 3.125rem;
     width: 100%;
     background-color: transparent;
     user-select: none;
 }
+
 .botones button.agregar {
     grid-column: 1;
     border: 1px solid #B16927;
@@ -100,10 +128,12 @@
     background-color: #B16927;
     transition: all .6s ease;
 }
-.botones button.agregar:hover{
+
+.botones button.agregar:hover {
     background-color: white;
     color: #B16927;
 }
+
 .botones .operadores {
     height: 100%;
     flex-grow: 1;
@@ -114,9 +144,11 @@
     background-color: #EFEFEF;
     border-radius: 4px;
 }
-.botones .operadores p{
+
+.botones .operadores p {
     user-select: none;
 }
+
 .botones .operadores .boton {
     display: grid;
     place-items: center;
@@ -132,9 +164,11 @@
 .botones .operadores .boton:active {
     background-color: rgba(68, 68, 68, 0.11);
 }
-.DatosExtras span{
+
+.DatosExtras span {
     color: #707070;
 }
+
 /* Sección Imágenes  -----------------------------------------------*/
 
 .imagenes {
@@ -142,59 +176,37 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 100%;
-    column-gap: 10px;
+    display: flex;
     user-select: none;
     align-items: center;
 }
-.secundarios{
-    grid-column: 1;
+
+.imagenes img {
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow-y: scroll;
+    object-fit: contain;
 }
-.imagenes .principal{
-    grid-column: 2;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 96% 4%;
-}
-.principal .imgPricipal{
-    grid-row: 1;
-    height: 600px;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-.principal img{
-    overflow: hidden;
-    object-fit:contain;
-}
-.carrusel{
+
+.carrusel {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.carrusel button{
+
+.carrusel button {
     background-color: rgba(112, 112, 112, 0.3);
     width: 8px;
     height: 8px;
     border-radius: 100%;
     cursor: pointer;
 }
-.carrusel button.B-Active{
+
+.carrusel button.B-Active {
     background-color: rgba(177, 106, 39, 0.5);
-    
+
 }
-.carrusel button:hover{
+
+.carrusel button:hover {
     background-color: rgba(112, 112, 112, 0.5);
 }

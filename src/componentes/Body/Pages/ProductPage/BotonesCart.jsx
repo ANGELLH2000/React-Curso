@@ -11,7 +11,6 @@ function SinStock(){
 }
 function Stock({data}) {
     const{carritoHook:{ExistenciaDeProducto,AgregarProducto,AumentarCantidad,RestarCantidad},navbar_tools:{visibleCart,openCart}}=useContext(GlobalContext)
-    console.log("JAJAJAJ",visibleCart)
     let existeProducto=ExistenciaDeProducto(data.SKU)
     function PlusAndLess(){
         return(

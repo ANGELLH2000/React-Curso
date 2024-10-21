@@ -1,7 +1,7 @@
 .container-CarritoPage {
     padding-top: 100px;
     display: grid;
-    grid-template-columns: 1fr repeat(2, 700px) 1fr;
+    grid-template-columns: 1fr minmax(auto,700px) 700px 1fr;
     grid-template-rows: auto;
     row-gap: 60px;
     margin-bottom: 100px;

@@ -1,7 +1,7 @@
 .container-PedidosPage {
     padding-top: 90px;
     display: grid;
-    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-columns: 1fr minmax(1200px,1400px) 1fr;
     row-gap: 80px;
     margin-bottom: 100px;
 

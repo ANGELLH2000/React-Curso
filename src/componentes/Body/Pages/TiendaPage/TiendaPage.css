@@ -14,7 +14,7 @@ body {
 .container-Tienda {
     padding-top: 100px;
     display: grid;
-    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-columns: 1fr minmax(minmax(auto,1200px),1400px) 1fr;
     grid-template-rows: auto;
     grid-template-areas:
         ". Title ."
@@ -41,9 +41,11 @@ p.links a {
 
 .container-productos {
     grid-area: container-productos;
+    width: 100%;
     display: grid;
     grid-template-columns: 260px 85%;
     grid-template-areas: "categoriasTodas listaProductos";
+    overflow: hidden;
 }
 
 .categoriasTodas {

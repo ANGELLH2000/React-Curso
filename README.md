@@ -1,5 +1,10 @@
 # React-Curso
 
+Este proyecto está desplegado en las siguientes plataformas:
+
+- **Vercel**: [https://react-curso-pi.vercel.app/](https://react-curso-pi.vercel.app/)
+- **Netlify**: [https://tartadulce.netlify.app/](https://tartadulce.netlify.app/)
+
 Este proyecto es una tienda en línea desarrollada con **React** y gestionada con **Firebase** para el almacenamiento de datos. Utiliza **React Router** para manejar la navegación de la aplicación, lo que permite una experiencia fluida entre las distintas secciones de la tienda.
 
 ## Funciones Principales
@@ -16,7 +21,10 @@ Este proyecto es una tienda en línea desarrollada con **React** y gestionada co
 2. **Gestión Global**:
    - El contexto global (`GlobalProvider`) permite compartir datos entre los distintos componentes, como el carrito de compras.
 
-3. **Integración con Firebase**:
+3. **Uso de LocalStorage**:
+   - Se utiliza **localStorage** en el hook `useCarrito.jsx` para almacenar de manera persistente los datos del carrito de compras en el navegador. Esto asegura que si el usuario cierra el navegador o refresca la página, los productos en el carrito se mantendrán guardados hasta que sean eliminados o procesados.
+
+4. **Integración con Firebase**:
    - Configuración de Firebase para almacenamiento de datos y futuras mejoras como autenticación y análisis.
 
 ## Instalación y Configuración
@@ -38,18 +46,22 @@ Este proyecto es una tienda en línea desarrollada con **React** y gestionada co
 
 4. Accede a la aplicación desde tu navegador en `http://localhost:3000`.
 
-## Tecnologías Utilizadas
+## Dependencias Utilizadas
 
+- **Firebase**: Para almacenamiento de datos en la nube y manejo de archivos.
 - **React**: Biblioteca de JavaScript para construir interfaces de usuario.
-- **React Router**: Librería para manejar rutas y navegación.
-- **Vite**: Herramienta de desarrollo rápida.
-- **Firebase**: Servicio backend para almacenamiento de archivos.
-- **ESLint**: Herramienta de linting para mantener la calidad del código.
+- **React DOM**: Biblioteca específica para renderizar React en el DOM.
+- **React Hook Form**: Para manejar formularios de manera eficiente con hooks.
+- **React Icons**: Conjunto de iconos listos para usar en aplicaciones React.
+- **React Router Dom**: Librería para manejar rutas y navegación en la aplicación.
+- **React Router Hash Link**: Para manejar enlaces con hash en rutas.
+- **React SVG**: Para manejar imágenes SVG en React.
 
 ## Mejoras Futuras
 
 - **Autenticación**: Integrar Firebase Authentication para usuarios.
 - **Análisis**: Implementar Firebase Analytics para monitorear el comportamiento de los usuarios.
+- **Pruebas unitarias**: Añadir pruebas con Jest u otra biblioteca.
 
 ## Contribuciones
 

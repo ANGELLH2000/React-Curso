@@ -19,7 +19,7 @@ function ProductPage() {
             <Loader/>
         )
     }
-    if(dataProducto===null){//////Mejorar codigo para llevara a pagina de error
+    if(dataProducto===null){
         return(
             <Navigate to="/Tienda"/>
         )

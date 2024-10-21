@@ -8,7 +8,7 @@
 .container-NosotrosPage{
     padding-top: 170px;
     display: grid;
-    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-columns: 1fr minmax(1200px,1400px) 1fr;
     grid-template-rows: auto auto auto;
     justify-items: center;
     row-gap: 150px;
